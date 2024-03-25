@@ -1,4 +1,4 @@
-# Software Development Portfolio 2.0
+# Software Development Portfolio | React, TypeScript, TailwindCSS
 
  Hey! I'm Kevin McCarthy, an experienced software developer with over 4 years of experience. I am passionate about blockchain technology, design, innovation and contributing to dynamic, collaborative teams. Welcome to my portfolio where I showcase my projects and skills.
 

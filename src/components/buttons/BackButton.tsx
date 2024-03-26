@@ -8,7 +8,7 @@ interface BackButtonProps {
 const BackButton: React.FunctionComponent<BackButtonProps> = ({ text }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(-1);
+    navigate("/home");
   };
 
   return (

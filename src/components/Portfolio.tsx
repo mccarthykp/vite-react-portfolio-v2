@@ -1,7 +1,7 @@
 import React from "react";
 import portfolio, { PortfolioItemData } from "../data/portfolio.ts";
 import PortfolioItem from "./PortfolioItem";
-import BackButton from "./BackButton.tsx";
+import BackButton from "./buttons/BackButton.tsx";
 
 export default function Portfolio() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Intro() {
+export default function Intro() {
   return (
     <>
       <div className="flex flex-row">
@@ -30,5 +30,3 @@ function Intro() {
     </>
   );
 }
-
-export default Intro;

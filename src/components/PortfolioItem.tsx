@@ -9,7 +9,7 @@ interface PortfolioItemProps {
   description: string;
 }
 
-const PortfolioItem: React.FC<PortfolioItemProps> = ({
+const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
   title, subtitle, imgUrl, imgAlt, link, description
 }) => {
   return (

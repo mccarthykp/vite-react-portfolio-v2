@@ -1,33 +1,37 @@
 import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Dark Mode Script
 import { applyTheme } from "./utils/themeUtils";
 // Visibility Script
-import { onDOMReady } from './utils/domUtils';
-// Components
-import Intro from "./components/Intro";
-import Footer from "./components/Footer";
-import Portfolio from "./components/Portfolio";
-import Contact from "./components/Contact";
+import { onDOMReady } from "./utils/domUtils";
+// Pages
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import NoPage from "./pages/NoPage";
 
-function App() {
+export default function App() {
   useEffect(() => {
     applyTheme();
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-        onDOMReady(() => {
-            document.body.style.visibility = 'visible';
-        });
+      onDOMReady(() => {
+        document.body.style.visibility = "visible";
+      });
     }, 200);
   }, []);
 
   return (
     <div className="App">
-      <Intro />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
-export default App;

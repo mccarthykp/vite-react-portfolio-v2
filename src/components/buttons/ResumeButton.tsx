@@ -1,22 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
-interface BackButtonProps {
+interface ResumeButtonProps {
   text: string;
 }
 
-const BackButton: React.FunctionComponent<BackButtonProps> = ({ text }) => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(-1);
+const ResumeButton: React.FunctionComponent<ResumeButtonProps> = ({ text }) => {
+  const openResume = () => {
+    const resumeUrl = 'src/assets/docs/KevinMcCarthy_Resume.pdf';
+    window.open(resumeUrl, '_blank');
   };
 
   return (
     <>
       <button
-        className="bg-green-500 hover:bg-green-600 text-white font-semibold mt-4 py-3 px-4 md:px-4 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+        className="bg-teal-700 hover:bg-teal-800 text-white font-semibold mt-4 py-3 px-4 md:px-4 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
         type="button"
-        onClick={handleClick}
+        onClick={openResume}
       >
         {text}
       </button>
@@ -24,4 +23,4 @@ const BackButton: React.FunctionComponent<BackButtonProps> = ({ text }) => {
   );
 };
 
-export default BackButton;
+export default ResumeButton;

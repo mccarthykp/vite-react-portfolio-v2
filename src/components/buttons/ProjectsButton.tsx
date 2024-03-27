@@ -16,7 +16,7 @@ const ProjectsButton: React.FunctionComponent<ProjectsButtonProps> = ({
   return (
     <>
       <button
-        className="relative bg-green-500 hover:bg-green-600 text-white dark:text-gray-300 font-semibold py-3 px-4 md:py-2 md:px-4 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+        className="relative bg-teal-700 hover:bg-teal-800 text-white dark:text-gray-300 font-semibold py-3 px-4 md:py-2 md:px-4 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
         type="button"
         onClick={handleClick}
       >

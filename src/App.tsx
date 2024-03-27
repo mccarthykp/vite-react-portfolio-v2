@@ -7,6 +7,7 @@ import { onDOMReady } from "./utils/domUtils";
 // Pages
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Blockchain from "./pages/Blockchain"
 import NoPage from "./pages/NoPage";
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/blockchain" element={<Blockchain />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>

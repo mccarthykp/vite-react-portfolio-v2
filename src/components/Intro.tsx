@@ -1,6 +1,6 @@
 import React from "react";
 
-function Intro() {
+export default function Intro() {
   return (
     <>
       <div className="flex flex-row">
@@ -19,16 +19,12 @@ function Intro() {
         </div>
       </div>
 
-      <p className="lg:w-5/6 text-xl font-normal text-left text-gray-600 dark:text-gray-400 py-4">
+      <p className="lg:w-5/6 max-w-4xl text-xl font-normal text-left text-gray-600 dark:text-gray-400 py-4">
         I'm a <b>Full Stack Software Developer</b> with over four years of
-        industry experience. I love building things on the internet and
-        collaborating with smart people. My most recent work involved leveraging
+        industry experience. My most recent work involved leveraging
         internal APIs to develop new user experiences and increase user
-        engagement on the Shopify platform using Ruby on Rails, React, TypeScript and
-        GraphQL.
+        engagement on the Shopify platform using <i>Ruby on Rails</i>, <i>React</i>, <i>TypeScript</i> and <i>GraphQL</i>.
       </p>
     </>
   );
 }
-
-export default Intro;

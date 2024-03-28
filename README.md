@@ -6,23 +6,23 @@ Please leave a :star: if you like it!
 
 ![Portfolio Home Page](public/assets/imgs/readme-img.png)
 
-### Try it out
+## Try it out
 
 My website is live [here](https://www.kevinmccarthy.dev).
 
 If you find any **errors** :no_entry:, please report them to **portfolio.errors@proton.me**
 
-### Technologies
+## Technologies
 
 * [React](https://react.dev/)
 * [TypeScript](https://www.typescriptlang.org/)
 * [TailwindCSS](https://tailwindcss.com/)
 
-### About Me
+## About Me
 
 Hi! :wave: I'm Kevin, a full-stack developer and passionate blockchain enthusiast from Ohio, USA. Please take a look at my [portfolio](https://www.kevinmccarthy.dev).
 
-You can get in touch with me:
+Here's how you can get in touch with me:
 
 - **Email:** [mccarthy.kevin@proton.me](mailto:mccarthy.kevin@proton.me)
 

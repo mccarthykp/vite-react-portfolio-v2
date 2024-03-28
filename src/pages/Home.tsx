@@ -4,7 +4,7 @@ import Intro from "../components/Intro";
 import Footer from "../components/Footer";
 import ResumeButton from "../components/buttons/ResumeButton";
 import ProjectsButton from "../components/buttons/ProjectsButton";
-import Web3Button from "../components/buttons/Web3Button";
+import BlockchainButton from "../components/buttons/BlockchainButton";
 import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
@@ -18,7 +18,7 @@ export default function Home() {
           <div className="lg:min-w-min flex flex-col space-y-4 md:space-x-4 md:flex-row">
             <ResumeButton text={"Resume"} />
             <ProjectsButton text={"Projects"} />
-            <Web3Button text={"Blockchain"} />
+            <BlockchainButton text={"Blockchain"} />
             <div className="flex-col space-x-4 space-y-4 md:space-y-0 mx-auto md:m-0 md:flex-row">
               <EmailButton />
               <GitHubButton />

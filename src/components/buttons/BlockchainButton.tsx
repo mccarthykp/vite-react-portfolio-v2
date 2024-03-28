@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-interface Web3ButtonProps {
+interface BlockchainButtonProps {
   text: string;
 }
 
-const Web3Button: React.FunctionComponent<Web3ButtonProps> = ({ text }) => {
+const BlockchainButton: React.FunctionComponent<BlockchainButtonProps> = ({ text }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/blockchain");
@@ -24,4 +24,4 @@ const Web3Button: React.FunctionComponent<Web3ButtonProps> = ({ text }) => {
   );
 };
 
-export default Web3Button;
+export default BlockchainButton;

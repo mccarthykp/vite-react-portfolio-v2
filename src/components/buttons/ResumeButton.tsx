@@ -13,7 +13,7 @@ const ResumeButton: React.FunctionComponent<ResumeButtonProps> = ({ text }) => {
   return (
     <>
       <button
-        className="bg-teal-700 hover:bg-teal-800 text-white font-semibold mt-4 py-3 px-4 md:px-4 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+        className="bg-teal-700 hover:bg-teal-600 text-white font-semibold mt-4 py-3 px-4 md:px-4 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
         type="button"
         onClick={openResume}
       >

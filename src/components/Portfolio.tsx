@@ -10,6 +10,7 @@ export default function Portfolio() {
           <PortfolioItem
             title={project.title}
             subtitle={project.subtitle}
+            tags={project.tags}
             imgUrl={project.imgUrl}
             imgAlt={project.imgAlt}
             link={project.link}

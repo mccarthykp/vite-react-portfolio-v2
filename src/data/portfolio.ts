@@ -1,6 +1,7 @@
 export interface PortfolioItemData {
   title: string;
   subtitle: string;
+  tags: string[];
   imgUrl: string;
   imgAlt: string;
   link: string;
@@ -12,6 +13,7 @@ const portfolio: PortfolioItemData[] = [
   {
     title: 'Poppy & Ash',
     subtitle: 'Interior Design Studio',
+    tags: ['PHP', 'Liquid'],
     imgUrl: '/assets/imgs/poppy-and-ash-logo.png',
     imgAlt: 'Poppy & Ash Logo',
     link: 'https://www.poppyandash.com/',
@@ -21,6 +23,7 @@ const portfolio: PortfolioItemData[] = [
   {
     title: 'SupplySync',
     subtitle: 'Smart Contract',
+    tags: ['Solidity', 'Truffle', 'Ganache'],
     imgUrl: '/assets/imgs/supply-sync-logo.png',
     imgAlt: 'SupplySync Logo',
     link: 'https://www.github.com/mccarthykp/SupplySync',
@@ -30,20 +33,12 @@ const portfolio: PortfolioItemData[] = [
   {
     title: 'Tomato Trove',
     subtitle: 'Web Scraper',
+    tags: ['Python', 'BeautifulSoup4'],
     imgUrl: '/assets/imgs/tomato-trove-logo.png',
     imgAlt: 'Tomato Trove Logo',
     link: 'https://www.github.com/mccarthykp/TomatoTrove',
     description: "A Rotten Tomatoes web scraper that functions with custom queried endpoints to serve scraped data. This was built in Python with BeautifulSoup4.",
     id: 3,
-  },
-  {
-    title: 'Your Project?',
-    subtitle: 'Contact me!',
-    imgUrl: '/assets/imgs/your-project-logo.png',
-    imgAlt: 'Default Project Logo',
-    link: '',
-    description: "I am available for freelance and contract work. If you have a project in mind, please reach out via email and I will respond within 1-2 business days.",
-    id: 4,
   },
 ];
 

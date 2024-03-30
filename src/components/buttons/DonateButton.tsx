@@ -57,9 +57,7 @@ const DonateButton: React.FunctionComponent = () => {
     }
 
     try {
-      // const apiKey = process.env.API_KEY;
       // Fetch current exchange rate from CoinGecko API
-
       const options = {
         url: "/v3/simple/price",
         method: "get",
@@ -68,7 +66,9 @@ const DonateButton: React.FunctionComponent = () => {
           ids: "ethereum",
           vs_currencies: "usd",
         },
-        headers: { "x-cg-demo-api-key": "CG-S8ZwdL8zo9jiTAj9oN3HzhAN" },
+        headers: {
+          "x-cg-demo-api-key": import.meta.env.VITE_COIN_GECKO_API_KEY,
+        },
       };
 
       console.log("Fetching exchange rate...");

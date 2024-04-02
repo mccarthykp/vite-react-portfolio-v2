@@ -43,7 +43,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
               {tags.map((tag, index) => (
                 <span 
                   key={index}
-                  className="text-xs bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-400 py-1 px-3 rounded-lg mr-2 mt-1"
+                  className="text-xs bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-400 py-1 px-1.5 rounded-lg mr-2 mt-1"
                 >
                   {tag}
                 </span>

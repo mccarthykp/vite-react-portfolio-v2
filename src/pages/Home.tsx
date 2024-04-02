@@ -4,7 +4,7 @@ import Intro from "../components/Intro";
 import Footer from "../components/Footer";
 import ResumeButton from "../components/buttons/ResumeButton";
 import ProjectsButton from "../components/buttons/ProjectsButton";
-import BlockchainButton from "../components/buttons/BlockchainButton";
+import BlockchainButton from "../components/buttons/xlockchain/BlockchainButton";
 import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";

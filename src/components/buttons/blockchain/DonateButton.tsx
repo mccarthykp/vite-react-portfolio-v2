@@ -1,5 +1,4 @@
 import axios from "axios";
-import React, { useState } from "react";
 
 declare global {
   interface Window {
@@ -11,10 +10,19 @@ interface EthereumProvider {
   request: (args: { method: string; params?: unknown[] }) => Promise<string>;
 }
 
-const DonateButton: React.FunctionComponent = () => {
-  const [walletConnected, setWalletConnected] = useState<boolean>(false);
-  const [userAddress, setUserAddress] = useState<string>("");
+interface DonateButtonProps {
+  walletConnectedState: boolean;
+  setWalletConnectedState: React.Dispatch<React.SetStateAction<boolean>>;
+  userAddress: string;
+  setUserAddress: React.Dispatch<React.SetStateAction<string>>;
+}
 
+const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
+  walletConnectedState,
+  setWalletConnectedState,
+  userAddress,
+  setUserAddress,
+}) => {
   const handleConnectWallet = async () => {
     if (!window.ethereum) {
       // MetaMask extension not detected
@@ -32,7 +40,7 @@ const DonateButton: React.FunctionComponent = () => {
 
       if (Array.isArray(accounts) && accounts.length > 0) {
         // Wallet connected successfully
-        setWalletConnected(true);
+        setWalletConnectedState(true);
         setUserAddress(accounts[0]);
       } else {
         throw new Error("Invalid accounts data received from MetaMask.");
@@ -45,7 +53,7 @@ const DonateButton: React.FunctionComponent = () => {
   };
 
   const handleDonate = async () => {
-    if (!walletConnected) {
+    if (!walletConnectedState) {
       alert("Please connect your wallet first.");
       return;
     }
@@ -119,12 +127,14 @@ const DonateButton: React.FunctionComponent = () => {
   };
 
   return (
-    <button
-      onClick={walletConnected ? handleDonate : handleConnectWallet}
-      className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
-    >
-      {walletConnected ? "Donate" : "Connect Wallet"}
-    </button>
+    <>
+      <button
+        onClick={walletConnectedState ? handleDonate : handleConnectWallet}
+        className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+      >
+        {walletConnectedState ? "Buy me a coffee!" : "Connect Wallet"}
+      </button>
+    </>
   );
 };
 

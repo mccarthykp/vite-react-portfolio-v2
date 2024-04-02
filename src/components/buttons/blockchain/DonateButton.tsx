@@ -21,17 +21,15 @@ const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
   walletConnectedState,
   setWalletConnectedState,
   userAddress,
-  setUserAddress,
+  setUserAddress
 }) => {
   const handleConnectWallet = async () => {
     if (!window.ethereum) {
-      // MetaMask extension not detected
       alert("Please install MetaMask extension to make a donation.");
       return;
     }
 
     try {
-      // Request permission to connect MetaMask
       const rawAccounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
@@ -39,17 +37,16 @@ const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
       const accounts = rawAccounts as unknown as string[];
 
       if (Array.isArray(accounts) && accounts.length > 0) {
-        // Wallet connected successfully
         setWalletConnectedState(true);
         setUserAddress(accounts[0]);
       } else {
-        throw new Error("Invalid accounts data received from MetaMask.");
+        throw new Error("No accounts found in MetaMask.");
       }
     } catch (error) {
-      // Handle error
       console.error(error);
       alert("Failed to connect to MetaMask. Please try again.");
     }
+    console.log("userAddress:", userAddress);
   };
 
   const handleDonate = async () => {
@@ -58,83 +55,58 @@ const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
       return;
     }
 
-    if (!window.ethereum) {
-      // MetaMask extension not detected
-      alert("Please install MetaMask extension to make a donation.");
-      return;
-    }
-
     try {
-      // Fetch current exchange rate from CoinGecko API
-      const options = {
-        url: "/v3/simple/price",
-        method: "get",
-        baseURL: "https://api.coingecko.com/api",
-        params: {
-          ids: "ethereum",
-          vs_currencies: "usd",
-        },
-        headers: {
-          "x-cg-demo-api-key": import.meta.env.VITE_COIN_GECKO_API_KEY,
-        },
-      };
+      const ethToUsdExchangeRate = await fetchEthToUsdExchangeRate();
 
-      console.log("Fetching exchange rate...");
-      const response = await axios.request(options);
-
-      console.log("Exchange rate response:", response.data);
-      const ethToUsdExchangeRate = response.data.ethereum.usd;
-
-      console.log("ETH to USD exchange rate:", ethToUsdExchangeRate);
-
-      // Calculate donation amount in ETH (assuming $5 USD)
       const donationAmountUSD = 5;
-      console.log("Donation amount in USD:", donationAmountUSD);
-
       const donationAmountETH = donationAmountUSD / ethToUsdExchangeRate;
-      console.log("Donation amount in ETH:", donationAmountETH);
+      const donationAmountInWei = toWei(donationAmountETH);
 
-      // Convert donation amount from ETH to wei and account for decimals
-      const noDecimal = Math.round(donationAmountETH * Math.pow(10, 18));
-      const donationAmountInWei = `0x${noDecimal.toString(16)}`;
-
-      // Trigger MetaMask donation flow
-      // Get provider and send transaction
-      console.log("Sending transaction to MetaMask...");
-      const result = await window.ethereum.request({
-        method: "eth_sendTransaction",
-        params: [
-          {
-            from: userAddress,
-            to: "0x0BCB197132Ac1206c54341e44Ef062424473488B", // My wallet address
-            value: donationAmountInWei, // Convert ETH to wei
-          },
-        ],
-      });
-      console.log("Transaction result:", result);
-
-      // Check if the transaction was successful
+      const result = await sendTransaction(donationAmountInWei);
       if (result) {
         alert("Donation successful!");
       } else {
         alert("Transaction failed. Please try again.");
       }
     } catch (error) {
-      // Handle error
       console.error(error);
       alert("Failed to start donation process. Please try again.");
     }
   };
 
+  const fetchEthToUsdExchangeRate = async (): Promise<number> => {
+    const response = await axios.get(
+      "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd"
+    );
+    return response.data.ethereum.usd;
+  };
+
+  const toWei = (amount: number): string => {
+    const noDecimal = Math.round(amount * Math.pow(10, 18));
+    return `0x${noDecimal.toString(16)}`;
+  };
+
+  const sendTransaction = async (amountInWei: string): Promise<boolean> => {
+    const result = await window.ethereum?.request({
+      method: "eth_sendTransaction",
+      params: [
+        {
+          from: userAddress,
+          to: "0x0BCB197132Ac1206c54341e44Ef062424473488B", // My wallet address
+          value: amountInWei,
+        },
+      ],
+    });
+    return Boolean(result);
+  };
+
   return (
-    <>
-      <button
-        onClick={walletConnectedState ? handleDonate : handleConnectWallet}
-        className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
-      >
-        {walletConnectedState ? "Buy me a coffee!" : "Connect Wallet"}
-      </button>
-    </>
+    <button
+      onClick={walletConnectedState ? handleDonate : handleConnectWallet}
+      className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+    >
+      {walletConnectedState ? "Buy me a coffee!" : "Connect Wallet"}
+    </button>
   );
 };
 

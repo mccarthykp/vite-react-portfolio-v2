@@ -12,8 +12,8 @@ import LinkedInButton from "../components/buttons/LinkedInButton";
 export default function Home() {
   return (
     <>
-      <body className="lg:w-auto px-5 py-20 md:py-40 font-sans bg-gray-200 dark:bg-gray-900 min-h-screen flex flex-col select-none">
-        <section className="w-1/1 lg:w-3/4 mx-auto">
+      <section className="lg:w-auto px-5 py-20 md:py-40 font-sans bg-gray-200 dark:bg-gray-900 min-h-screen flex flex-col select-none">
+        <div className="w-1/1 lg:w-3/4 mx-auto">
           <Intro />
           <div className="lg:min-w-min flex flex-col space-y-4 md:space-x-4 md:flex-row">
             <ResumeButton text={"Resume"} />
@@ -26,8 +26,8 @@ export default function Home() {
             </div>
           </div>
           <Footer />
-        </section>
-      </body>
+        </div>
+      </section>
     </>
   );
 }

@@ -1,5 +1,4 @@
-// Components
-import React from "react";
+import React, { useState } from "react";
 import BackButton from "../components/buttons/BackButton";
 import ConnectedWallet from "../components/buttons/blockchain/ConnectedWallet";
 import DonateButton from "../components/buttons/blockchain/DonateButton";
@@ -8,23 +7,14 @@ import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
 import Footer from "../components/Footer";
 
-interface BlockchainProps {
-  walletConnectedState: boolean;
-  userAddress: string;
-  setWalletConnectedState: React.Dispatch<React.SetStateAction<boolean>>;
-  setUserAddress: React.Dispatch<React.SetStateAction<string>>;
-}
+const Blockchain: React.FunctionComponent = () => {
+  const [walletConnectedState, setWalletConnectedState] = useState<boolean>(false);
+  const [userAddress, setUserAddress] = useState<string>("");
 
-const Blockchain: React.FunctionComponent<BlockchainProps> = ({
-  walletConnectedState,
-  userAddress,
-  setWalletConnectedState,
-  setUserAddress,
-}) => {
   return (
     <>
-      <body className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
-        <section className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
+      <section className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+        <div className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
             <BackButton text={"back"} />
             <div className="flex flex-col py-8">
@@ -35,9 +25,7 @@ const Blockchain: React.FunctionComponent<BlockchainProps> = ({
           </div>
 
           {walletConnectedState && (
-            <div className="absolute top-0 right-0 mt-4 mr-4 text-gray-400">
-              <ConnectedWallet userAddress={userAddress} />
-            </div>
+            <ConnectedWallet userAddress={userAddress} />
           )}
 
           <div className="w-1/1 flex-col py-4 text-center">
@@ -45,8 +33,8 @@ const Blockchain: React.FunctionComponent<BlockchainProps> = ({
               <div className="mr-3">
                 <DonateButton
                   walletConnectedState={walletConnectedState}
-                  userAddress={userAddress}
                   setWalletConnectedState={setWalletConnectedState}
+                  userAddress={userAddress}
                   setUserAddress={setUserAddress}
                 />
               </div>
@@ -58,8 +46,8 @@ const Blockchain: React.FunctionComponent<BlockchainProps> = ({
             </div>
             <Footer />
           </div>
-        </section>
-      </body>
+        </div>
+      </section>
     </>
   );
 };

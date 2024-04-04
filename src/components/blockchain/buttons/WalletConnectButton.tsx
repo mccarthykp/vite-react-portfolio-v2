@@ -15,11 +15,13 @@ interface WalletConnectButtonProps {
   setUserAddress: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const WalletConnectButton: React.FunctionComponent<WalletConnectButtonProps> = ({
+const WalletConnectButton: React.FunctionComponent<
+  WalletConnectButtonProps
+> = ({
   walletConnectedState,
   setWalletConnectedState,
   userAddress,
-  setUserAddress
+  setUserAddress,
 }) => {
   const handleConnectWallet = async () => {
     if (!window.ethereum) {
@@ -52,7 +54,7 @@ const WalletConnectButton: React.FunctionComponent<WalletConnectButtonProps> = (
       {!walletConnectedState && (
         <button
           onClick={handleConnectWallet}
-          className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+          className="bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 text-gray-900 font-medium py-1.5 px-6 rounded-lg shadow-lg focus:transparent transition duration-300"
         >
           Connect Wallet
         </button>

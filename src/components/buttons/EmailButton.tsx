@@ -38,7 +38,7 @@ const EmailButton = () => {
   return (
     <>
       <button
-        className="bg-gray-800 hover:bg-gray-900 dark:hover:bg-gray-700 text-white font-semibold py-4 px-2 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+        className="bg-gray-800 hover:bg-gray-900 dark:hover:bg-gray-700 text-white font-medium py-4 px-2 rounded-lg shadow-lg focus:transparent transition duration-300"
         type="button"
         onClick={handleCopy}
         onMouseEnter={handleMouseEnter}

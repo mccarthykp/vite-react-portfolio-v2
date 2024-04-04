@@ -76,7 +76,7 @@ return (
     {walletConnectedState && (
       <button
         onClick={handleDonate}
-        className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-bold py-3 px-6 rounded-lg shadow-lg focus:transparent transition-bg duration-300"
+        className="bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:transparent"
       >
         Buy me a coffee!
       </button>

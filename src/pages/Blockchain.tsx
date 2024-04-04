@@ -4,6 +4,7 @@ import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";
 import BlogContent from "../components/blockchain/content/BlogContent"
 import DonateButton from "../components/blockchain/buttons/DonateButton";
+import POAPButtton from "../components/blockchain/buttons/POAPButton";
 import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
@@ -40,7 +41,13 @@ const Blockchain: React.FunctionComponent = () => {
 
               
 
-              <div className="mt-10">
+              
+
+              <div className="mt-10 flex flex-col space-y-5">
+                <POAPButtton 
+                  walletConnectedState={walletConnectedState}
+                  userAddress={userAddress}
+                />
                 <DonateButton 
                   walletConnectedState={walletConnectedState}
                   userAddress={userAddress}

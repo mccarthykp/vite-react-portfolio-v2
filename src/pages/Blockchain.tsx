@@ -39,10 +39,6 @@ const Blockchain: React.FunctionComponent = () => {
                 Blockchain
               </h1>
 
-              
-
-              
-
               <div className="mt-10 flex flex-col space-y-5">
                 <POAPButtton 
                   walletConnectedState={walletConnectedState}

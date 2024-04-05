@@ -1,54 +1,16 @@
-import React, { useState } from "react";
-import Tooltip from "./EmailTooltip";
-
 const EmailButton = () => {
-  const [tooltipText, setTooltipText] = useState("Copy Email");
-  const [tooltipVisible, setTooltipVisible] = useState(false);
-  const [tooltipPosition, setTooltipPosition] = useState({
-    top: 0,
-    left: 0,
-    height: 0,
-  });
 
   const handleCopy = () => {
     navigator.clipboard.writeText("mccarthy.kevin@proton.me");
-    setTooltipText("Copied!");
-    setTooltipVisible(true);
-    setTimeout(() => {
-      setTooltipText("Copy Email");
-      setTooltipVisible(false);
-    }, 2000);
-  };
-
-  const handleMouseEnter = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const target = event.target as HTMLElement;
-    const rect = target.getBoundingClientRect();
-    setTooltipPosition({
-      top: rect.top + rect.height,
-      left: rect.left,
-      height: rect.height,
-    });
-    setTooltipVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setTooltipVisible(false);
   };
 
   return (
     <>
       <button
-        className="bg-gray-800 hover:bg-gray-900 dark:hover:bg-gray-700 text-white font-medium py-4 px-2 rounded-lg shadow-lg focus:transparent transition duration-300"
         type="button"
+        className="bg-gray-800 hover:bg-gray-900 dark:hover:bg-gray-700 text-white font-medium py-4 px-2 rounded-lg shadow-lg focus:transparent transition duration-300"
         onClick={handleCopy}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
       >
-        <Tooltip
-          text={tooltipText}
-          visible={tooltipVisible}
-          position={tooltipPosition}
-        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-4 w-8"

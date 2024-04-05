@@ -39,19 +39,20 @@ const POAPButton: React.FunctionComponent<POAPButtonProps> = ({
 
   return (
     <>
-      {walletConnectedState && (
-        <button
-          onClick={handleDistribute}
-          disabled={poapClaimed} // Disable the button if POAP is claimed
-          className={`${
-            poapClaimed
-              ? "bg-gray-600 cursor-default text-white font-medium py-3 px-6 rounded-lg focus:transparent transition-bg duration-300 opacity-50"
-              : "bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium py-3 px-6 rounded-lg focus:transparent"
-          }`}
-        >
-          {poapClaimed ? "Claimed" : "I was here!"}
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={handleDistribute}
+        // Disable button if POAP is claimed or no wallet is connected
+        disabled={poapClaimed || !walletConnectedState} 
+        className={`
+        ${!walletConnectedState ? 'blur-sm' : ''}
+        ${poapClaimed
+          ? "bg-gray-600 cursor-default text-white font-medium py-3 px-6 rounded-lg focus:transparent transition-bg duration-300 opacity-50"
+          : "bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium py-3 px-6 rounded-lg focus:transparent"
+        } `}
+      >
+        {poapClaimed ? "Claimed" : "I was here!"}
+      </button>
     </>
   );
 };

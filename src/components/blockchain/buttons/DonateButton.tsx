@@ -1,4 +1,5 @@
 import axios from "axios";
+// import ButtonTooltip from "../../ButtonTooltip";
 
 declare global {
   interface Window {
@@ -19,7 +20,6 @@ const DonateButton: React.FunctionComponent<WalletConnectButtonProps> = ({
   walletConnectedState,
   userAddress,
 }) => {
-
   const handleDonate = async () => {
     if (!walletConnectedState) {
       alert("Please connect your wallet first.");
@@ -77,7 +77,9 @@ const DonateButton: React.FunctionComponent<WalletConnectButtonProps> = ({
         type="button"
         onClick={handleDonate}
         disabled={!walletConnectedState}
-        className={`bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:transparent ${walletConnectedState ? '' : 'blur-sm'}`}
+        className={`bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium w-45 py-3 px-6 rounded-lg shadow-lg focus:transparent ${
+          walletConnectedState ? "" : "blur-sm"
+        }`}
       >
         Buy me a coffee!
       </button>

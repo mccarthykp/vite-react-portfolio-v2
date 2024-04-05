@@ -44,6 +44,7 @@ const Blockchain: React.FunctionComponent = () => {
                   walletConnectedState={walletConnectedState}
                   userAddress={userAddress}
                 />
+                
                 <DonateButton 
                   walletConnectedState={walletConnectedState}
                   userAddress={userAddress}

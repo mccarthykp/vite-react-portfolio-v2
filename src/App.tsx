@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <BrowserRouter basename="/home">
+      <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />

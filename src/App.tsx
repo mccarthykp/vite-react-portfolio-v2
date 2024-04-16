@@ -8,7 +8,7 @@ import { onDOMReady } from "./utils/domUtils";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Blockchain from "./pages/Blockchain"
-// import NoPage from "./pages/NoPage";
+import NoPage from "./pages/NoPage";
 
 export default function App() {
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blockchain" element={<Blockchain />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
     </div>

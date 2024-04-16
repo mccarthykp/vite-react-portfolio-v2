@@ -1,6 +1,5 @@
-import React from "react";
-import portfolio, { PortfolioItemData } from "../data/portfolio.ts";
-import PortfolioItem from "./PortfolioItem";
+import portfolio, { PortfolioItemData } from "../../data/portfolio.ts";
+import PortfolioItem from "./PortfolioItem.tsx";
 
 export default function Portfolio() {
   return (

@@ -9,6 +9,7 @@ import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 const Blockchain: React.FunctionComponent = () => {
   const [walletConnectedState, setWalletConnectedState] = useState<boolean>(false);

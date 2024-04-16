@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// Components
 import BackButton from "../components/buttons/BackButton";
 import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";

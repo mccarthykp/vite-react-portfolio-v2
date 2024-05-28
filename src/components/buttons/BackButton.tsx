@@ -14,7 +14,7 @@ const BackButton: React.FunctionComponent<BackButtonProps> = ({ text }) => {
   return (
     <>
       <button
-        className="flex bg-teal-700 hover:bg-teal-800 text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:transparent transition duration-300"
+        className="flex bg-teal-600 hover:bg-teal-500 text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:transparent transition duration-300"
         type="button"
         onClick={handleClick}
       >

@@ -2,6 +2,7 @@
 import BackButton from "../components/buttons/BackButton";
 import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";
+import BlockchainPortfolio from "../components/portfolio/BlockchainPortfolio";
 import BlogContent from "../components/blockchain/content/BlogContent"
 import DonateButton from "../components/blockchain/buttons/DonateButton";
 import POAPButtton from "../components/blockchain/buttons/POAPButton";
@@ -39,8 +40,15 @@ const Blockchain: React.FunctionComponent = () => {
               <h1 className="md:text-left text-3x1 md:text-4xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
                 Blockchain
               </h1>
+            </div>
 
-              <div className="mt-10 flex flex-col space-y-5">
+            <BlockchainPortfolio />
+
+            <div className="flex flex-col items-start space-y-8">
+              <h2 className="md:text-left text-3x1 md:text-1xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
+                  Wallet Utilities
+              </h2>
+              <div className="flex flex-row space-x-5">
                 <POAPButtton 
                   walletConnectedState={walletConnectedState}
                   userAddress={userAddress}
@@ -51,7 +59,10 @@ const Blockchain: React.FunctionComponent = () => {
                   userAddress={userAddress}
                 />
               </div>
+              
             </div>
+
+            <p className="flex mt-5 dark:text-gray-300 text-sm items-center"><span className="text-blue-900 dark:text-blue-200 mr-2 text-2xl">&#9432;</span>I'm working on new integrations, check back soon to see more!</p>
           </div>
           
           <div className="mx-auto md:mx-0">

@@ -7,6 +7,7 @@ import BlogContent from "../components/blockchain/content/BlogContent"
 import IntegrationInfo from "../components/blockchain/walletconditional/IntegrationInfo"
 import DonateButton from "../components/blockchain/buttons/DonateButton";
 import POAPButtton from "../components/blockchain/buttons/POAPButton";
+import WalletOverviewButton from "../components/blockchain/buttons/WalletOverviewButton";
 import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
@@ -59,6 +60,12 @@ const Blockchain: React.FunctionComponent = () => {
                 />
                 
                 <DonateButton 
+                  walletConnectedState={walletConnectedState}
+                  userAddress={userAddress}
+                />
+              </div>
+              <div className="flex flex-row space-x-5">
+                <WalletOverviewButton
                   walletConnectedState={walletConnectedState}
                   userAddress={userAddress}
                 />

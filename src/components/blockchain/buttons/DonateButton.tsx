@@ -1,5 +1,4 @@
 import axios from "axios";
-// import ButtonTooltip from "../../ButtonTooltip";
 
 declare global {
   interface Window {

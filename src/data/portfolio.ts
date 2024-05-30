@@ -33,7 +33,7 @@ const portfolio: PortfolioItemData[] = [
   {
     title: 'SupplySync',
     subtitle: 'Smart Contract',
-    tags: ['Solidity', 'Truffle', 'Ganache'],
+    tags: ['Truffle', 'Ganache', 'Solidity'],
     imgUrl: '/assets/imgs/supply-sync-logo.png',
     imgAlt: 'SupplySync Logo',
     link: 'https://www.github.com/mccarthykp/SupplySync',
@@ -73,7 +73,7 @@ const portfolio: PortfolioItemData[] = [
   {
     title: 'TokenTracker',
     subtitle: 'Currency Monitoring',
-    tags: ['CoinGecko API', 'Vite', 'React'],
+    tags: ['CoinGecko API', 'Vite', 'React', 'TypeScript'],
     imgUrl: '/assets/imgs/tokentracker-logo.png',
     imgAlt: 'TokenTracker Logo',
     link: 'https://www.github.com/mccarthykp/TokenTracker',

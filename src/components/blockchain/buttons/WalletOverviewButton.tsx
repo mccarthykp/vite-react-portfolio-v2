@@ -28,7 +28,7 @@ const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> =
         const currentAccount = accounts[0];
 
         // Open new tab with wallet information
-        window.open(`https://etherscan.io/address/${currentAccount}`, '_blank');
+        window.open(`https://etherscan.io/address/${currentAccount}#analytics`, '_blank');
       } else {
         // MetaMask is not installed
         alert("MetaMask is not installed");

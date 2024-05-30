@@ -22,7 +22,7 @@ export default function Projects() {
           <Portfolio />
           <div className="w-1/1 flex-col py-4 text-center">
             <div className="flex flex-col md:flex-row">
-              <div className="flex-col space-x-3 space-y-4 md:space-y-0 mx-auto md:m-0 md:flex-row">
+              <div className="flex-col space-x-3 md:space-y-0 mx-auto md:m-0 md:flex-row">
                 <EmailButton />
                 <GitHubButton />
                 <LinkedInButton />

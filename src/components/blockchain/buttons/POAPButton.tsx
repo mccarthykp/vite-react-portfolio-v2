@@ -46,7 +46,7 @@ const POAPButton: React.FunctionComponent<POAPButtonProps> = ({
         // Disable button if POAP is claimed or no wallet is connected
         disabled={poapClaimed || !walletConnectedState} 
         className={`
-        ${!walletConnectedState ? 'blur-sm hover:ring-0 ring-transparent' : ''}
+        ${!walletConnectedState ? 'blur-sm hover:ring-0 hover:ring-transparent' : ''}
         ${poapClaimed
           ? "bg-gray-600 cursor-default text-white font-medium py-3 px-6 rounded-lg focus:transparent transition-bg duration-300 opacity-50"
           : "bg-gradient-to-r from-blue-500 to-green-400 ring-inset hover:ring-2 ring-white text-white font-medium py-3 px-6 rounded-lg focus:transparent"

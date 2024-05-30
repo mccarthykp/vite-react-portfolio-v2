@@ -37,18 +37,16 @@ const Blockchain: React.FunctionComponent = () => {
         <div className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
             <BackButton text={"back"} />
-            <div className="flex flex-col py-8">
+            <div className="flex flex-col pt-8 pb-4">
               <h1 className="md:text-left text-3x1 md:text-4xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
                 Blockchain
               </h1>
             </div>
 
-            <BlockchainPortfolio />
-
-            <div className="flex flex-col items-start space-y-6">
-              <h2 className="md:text-left text-3x1 md:text-1xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
+            <div className="flex flex-col items-start space-y-6 pb-4">
+              {/* <h2 className="md:text-left text-3x1 md:text-1xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
                   Wallet Utilities
-              </h2>
+              </h2> */}
 
               <IntegrationInfo
                 walletConnectedState={walletConnectedState}
@@ -66,6 +64,14 @@ const Blockchain: React.FunctionComponent = () => {
                 />
               </div>
             </div>
+
+            <h2 className="md:text-left text-3x1 md:text-1xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4 mt-6">
+              Projects
+            </h2>
+            <div className="mt-6">
+              <BlockchainPortfolio />
+            </div>
+            
           </div>
           
           <div className="mx-auto md:mx-0">
@@ -74,7 +80,7 @@ const Blockchain: React.FunctionComponent = () => {
           
           <div className="w-1/1 flex-col py-4 text-center">
             <div className="flex flex-col md:flex-row">
-              <div className="flex-col space-x-3 space-y-4 mx-auto md:m-0 md:flex-row">
+              <div className="flex-col space-x-3 mx-auto md:m-0 md:flex-row">
                 <EmailButton />
                 <GitHubButton />
                 <LinkedInButton />

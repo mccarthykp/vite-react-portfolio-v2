@@ -41,6 +41,16 @@ const portfolio: PortfolioItemData[] = [
     id: 3,
   },
   {
+    title: 'FillRx',
+    subtitle: 'E-script Service',
+    tags: ['Solidity'],
+    imgUrl: '/assets/imgs/fillrx-logo.png',
+    imgAlt: 'FillRX Logo',
+    link: 'https://www.github.com/mccarthykp/FillRx',
+    description: "FillRx is a comprehensive web and mobile application designed to seamlessly integrate patients, healthcare providers, and pharmacies, optimizing the prescription and fulfillment journey. Utilizing private blockchain technology, FillRx provides a secure, encrypted, and decentralized solution for the storage and transfer of electronic prescriptions.",
+    id: 4,
+  },
+  {
     title: 'Tomato Trove',
     subtitle: 'Web Scraper',
     tags: ['Python', 'BeautifulSoup4'],
@@ -48,7 +58,17 @@ const portfolio: PortfolioItemData[] = [
     imgAlt: 'Tomato Trove Logo',
     link: 'https://www.github.com/mccarthykp/TomatoTrove',
     description: "A Rotten Tomatoes web scraper that functions with custom queried endpoints to serve scraped data. This was built in Python with BeautifulSoup4.",
-    id: 4,
+    id: 5,
+  },
+  {
+    title: 'DEHR',
+    subtitle: 'Electronic Health Records Service',
+    tags: ['IPFS', 'Solidity'],
+    imgUrl: '/assets/imgs/dehr-logo.png',
+    imgAlt: 'DEHR Logo',
+    link: 'https://www.github.com/mccarthykp/DEHR',
+    description: "DEHR provides secure, encrypted storage, sharing, and access to patient health information. This enables healthcare providers to deliver personalized, interoperable care while streamlining administrative processes through robust access control, auditability, and decentralized storage solutions.",
+    id: 6,
   },
   {
     title: 'TokenTracker',
@@ -58,7 +78,7 @@ const portfolio: PortfolioItemData[] = [
     imgAlt: 'TokenTracker Logo',
     link: 'https://www.github.com/mccarthykp/TokenTracker',
     description: "TokenTracker is a web application that tracks the top 25 cryptocurrencies by market capitalization. It provides real-time updates and allows users to filter coins by price and 24-hour change.",
-    id: 5,
+    id: 7,
   },
 ];
 

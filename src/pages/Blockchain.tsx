@@ -3,10 +3,11 @@ import BackButton from "../components/buttons/BackButton";
 import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";
 import BlockchainPortfolio from "../components/portfolio/BlockchainPortfolio";
-import BlogContent from "../components/blockchain/content/BlogContent"
-import IntegrationInfo from "../components/blockchain/walletconditional/IntegrationInfo"
+import BlogContent from "../components/blockchain/content/BlogContent";
+import IntegrationInfo from "../components/blockchain/walletconditional/IntegrationInfo";
 import DonateButton from "../components/blockchain/buttons/DonateButton";
 import POAPButtton from "../components/blockchain/buttons/POAPButton";
+import EtherscanButton from "../components/blockchain/buttons/EtherscanButton";
 import WalletOverviewButton from "../components/blockchain/buttons/WalletOverviewButton";
 import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
@@ -37,7 +38,7 @@ const Blockchain: React.FunctionComponent = () => {
 
         <div className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
-            <BackButton text={"back"} />
+            <BackButton text={"back"} destination={"/home"} />
             <div className="flex flex-col pt-8 pb-4">
               <h1 className="md:text-left text-3x1 md:text-4xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
                 Blockchain
@@ -45,9 +46,6 @@ const Blockchain: React.FunctionComponent = () => {
             </div>
 
             <div className="flex flex-col items-start space-y-6 pb-4">
-              {/* <h2 className="md:text-left text-3x1 md:text-1xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
-                  Wallet Utilities
-              </h2> */}
 
               <IntegrationInfo
                 walletConnectedState={walletConnectedState}
@@ -65,9 +63,12 @@ const Blockchain: React.FunctionComponent = () => {
                 />
               </div>
               <div className="flex flex-row space-x-5">
+                <EtherscanButton
+                  walletConnectedState={walletConnectedState}
+                />
+
                 <WalletOverviewButton
                   walletConnectedState={walletConnectedState}
-                  userAddress={userAddress}
                 />
               </div>
             </div>

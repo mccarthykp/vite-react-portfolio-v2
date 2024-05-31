@@ -12,7 +12,7 @@ export default function Projects() {
       <body className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
         <section className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
-            <BackButton text={"back"} />
+            <BackButton text={"back"} destination={"/home"} />
             <div className="flex flex-col py-8">
               <h1 className="text-3x1 md:text-4xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
                 Projects

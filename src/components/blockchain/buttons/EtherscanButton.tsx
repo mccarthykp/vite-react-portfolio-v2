@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 declare global {
   interface Window {
@@ -11,16 +10,14 @@ interface EthereumProvider {
   request: (args: { method: string; params?: unknown[] }) => Promise<string>;
 }
 
-interface WalletOverviewButtonProps {
+interface EtherscanButtonProps {
   walletConnectedState: boolean;
 }
 
-const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> = ({
+const EtherscanButton: React.FunctionComponent<EtherscanButtonProps> = ({
   walletConnectedState,
 }) => {
-  const navigate = useNavigate();
-
-  const handleWalletOverviewButtonClick = async () => {
+  const handleEtherscanButtonClick = async () => {
     try {
       if (window.ethereum) {
         // Check if MetaMask is installed
@@ -28,7 +25,7 @@ const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> =
         const currentAccount = accounts[0];
 
         // Open new tab with wallet information
-        navigate(`/wallet-overview/address=${currentAccount}`);
+        window.open(`https://etherscan.io/address/${currentAccount}#analytics`, '_blank');
       } else {
         // MetaMask is not installed
         alert("MetaMask is not installed");
@@ -42,17 +39,17 @@ const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> =
     <>
       <button
         type="button"
-        onClick={handleWalletOverviewButtonClick}
+        onClick={handleEtherscanButtonClick}
         // Disable button if no wallet is connected
         disabled={!walletConnectedState} 
         className={`bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium w-45 py-3 w-40 rounded-lg shadow-lg focus:transparent ${
           walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
-        Wallet Overview
+        Etherscan
       </button>
     </>
   );
 };
 
-export default WalletOverviewButton;
+export default EtherscanButton;

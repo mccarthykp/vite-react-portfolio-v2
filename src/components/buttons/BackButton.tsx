@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 interface BackButtonProps {
   text: string;
+  destination: string;
 }
 
-const BackButton: React.FunctionComponent<BackButtonProps> = ({ text }) => {
+const BackButton: React.FunctionComponent<BackButtonProps> = ({ text, destination }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/home");
+    navigate(destination);
   };
 
   return (

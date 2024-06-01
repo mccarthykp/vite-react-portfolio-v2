@@ -27,8 +27,8 @@ const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> =
         const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
         const currentAccount = accounts[0];
 
-        // Open new tab with wallet information
-        navigate(`/wallet-overview/address=${currentAccount}`);
+        // Open new tab with wallet address
+        navigate('/wallet-overview', { state: { address: currentAccount } });
       } else {
         // MetaMask is not installed
         alert("MetaMask is not installed");

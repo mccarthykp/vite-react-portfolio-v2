@@ -1,10 +1,11 @@
+import { useState } from "react";
 // Components
 import BackButton from "../components/buttons/BackButton";
-import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";
+import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
+import IntegrationInfo from "../components/blockchain/walletconditional/IntegrationInfo";
 import BlockchainPortfolio from "../components/portfolio/BlockchainPortfolio";
 import BlogContent from "../components/blockchain/content/BlogContent";
-import IntegrationInfo from "../components/blockchain/walletconditional/IntegrationInfo";
 import DonateButton from "../components/blockchain/buttons/DonateButton";
 import POAPButtton from "../components/blockchain/buttons/POAPButton";
 import EtherscanButton from "../components/blockchain/buttons/EtherscanButton";
@@ -13,22 +14,30 @@ import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
 import Footer from "../components/Footer";
-import { useState } from "react";
+// Utilities
+import { connectWallet } from "../utils/walletConnectUtils";
 
 const Blockchain: React.FunctionComponent = () => {
   const [walletConnectedState, setWalletConnectedState] = useState<boolean>(false);
-  const [userAddress, setUserAddress] = useState<string>("");
+  const [userAddress, setUserAddress] = useState<string | null>(null);
+
+  const handleConnectWallet = async () => {
+    try {
+      await connectWallet(setWalletConnectedState, setUserAddress);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to connect to MetaMask. Please try again.");
+    }
+  };
 
   return (
     <>
       <section className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
 
         <div className="absolute top-0 right-0 mt-4 mr-4">
-          <WalletConnectButton
+          <WalletConnectButton 
             walletConnectedState={walletConnectedState}
-            setWalletConnectedState={setWalletConnectedState}
-            userAddress={userAddress}
-            setUserAddress={setUserAddress}
+            onConnectWallet={handleConnectWallet}
           />
         </div>
 
@@ -54,7 +63,7 @@ const Blockchain: React.FunctionComponent = () => {
               <div className="flex flex-row space-x-5">
                 <POAPButtton 
                   walletConnectedState={walletConnectedState}
-                  userAddress={userAddress}
+                  // userAddress={userAddress}
                 />
                 
                 <DonateButton 

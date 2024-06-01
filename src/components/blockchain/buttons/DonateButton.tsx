@@ -10,12 +10,12 @@ interface EthereumProvider {
   request: (args: { method: string; params?: unknown[] }) => Promise<string>;
 }
 
-interface WalletConnectButtonProps {
+interface DonateButtonProps {
   walletConnectedState: boolean;
-  userAddress: string;
+  userAddress: string | null;
 }
 
-const DonateButton: React.FunctionComponent<WalletConnectButtonProps> = ({
+const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
   walletConnectedState,
   userAddress,
 }) => {
@@ -74,7 +74,7 @@ const DonateButton: React.FunctionComponent<WalletConnectButtonProps> = ({
     <>
       <button
         type="button"
-        onClick={handleDonate}
+        onClick={handleDonate }
         disabled={!walletConnectedState}
         className={`bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium w-45 py-3 w-40 rounded-lg shadow-lg focus:transparent ${
           walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"

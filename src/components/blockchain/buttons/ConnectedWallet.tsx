@@ -1,21 +1,16 @@
-const ConnectedWallet = ({ userAddress }: { userAddress: string | null}) => {
-  // Since userAddress is passed as a prop, we don't need to use useState here.
+import React from "react";
+// Utilities
+import { truncateAddress } from "../../../utils/truncateAddressUtil.ts";
 
-  // Function to truncate the wallet address
-  const truncateAddress = (address: string, length: number) => {
-    const visibleChars = length * 2; // 2 hex characters per byte
-    const start = address.slice(0, visibleChars / 2);
-    const end = address.slice(-visibleChars / 2);
-    return `${start}...${end}`;
-  };
+interface ConnectedWalletProps {
+  userAddress: string | null;
+}
 
-  // If userAddress is null or undefined, display a loading message
+const ConnectedWallet: React.FunctionComponent<ConnectedWalletProps> = ({ userAddress }) => {
+
+  // If userAddress is null or undefined, display nothing
   if (!userAddress) {
-    return (
-      <div className="absolute top-0 right-0 mt-4 mr-4 text-gray-400">
-        Loading...
-      </div>
-    );
+    return null;
   }
 
   // Display the truncated userAddress

@@ -9,8 +9,8 @@ import Footer from "../components/Footer";
 export default function Projects() {
   return (
     <>
-      <body className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
-        <section className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
+      <section className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+        <div className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
             <BackButton text={"back"} destination={"/home"} />
             <div className="flex flex-col py-8">
@@ -30,8 +30,8 @@ export default function Projects() {
             </div>
             <Footer />
           </div>
-        </section>
-      </body>
+        </div>
+      </section>
     </>
   );
 }

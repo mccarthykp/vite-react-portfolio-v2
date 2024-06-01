@@ -13,12 +13,10 @@ interface EthereumProvider {
 
 interface POAPButtonProps {
   walletConnectedState: boolean;
-  userAddress: string;
 }
 
 const POAPButton: React.FunctionComponent<POAPButtonProps> = ({
   walletConnectedState,
-  // userAddress,
 }) => {
   const [poapClaimed, setPOAPClaimed] = useState(false);
 

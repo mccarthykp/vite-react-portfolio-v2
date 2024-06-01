@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blockchain" element={<Blockchain />} />
-          <Route path="/wallet-overview/:address" element={<WalletOverviewPage />} />
+          <Route path="/wallet-overview" element={<WalletOverviewPage />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>

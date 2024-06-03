@@ -20,8 +20,6 @@ const ProjectsButton: React.FunctionComponent<ProjectsButtonProps> = ({
         type="button"
         onClick={handleClick}
       >
-        <span className="absolute inline-flex animate-ping h-3 w-3 rounded-full bg-green-400 opacity-75 mx-16 mt-0" />
-        <span className="absolute inline-flex rounded-full h-3 w-3 bg-red-600 mx-16 mt-0" />
         {text}
       </button>
     </>

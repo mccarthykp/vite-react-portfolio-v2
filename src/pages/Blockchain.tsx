@@ -32,35 +32,35 @@ const Blockchain: React.FunctionComponent = () => {
 
   return (
     <>
-      <section className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+      <section className="bg-blockchain dark:dark-bg-blockchain flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
 
-        <div className="absolute top-0 right-0 mt-4 mr-4">
-          <WalletConnectButton 
-            walletConnectedState={walletConnectedState}
-            onConnectWallet={handleConnectWallet}
-          />
-        </div>
-
-        {walletConnectedState && (
-          <ConnectedWallet userAddress={userAddress} />
-        )}
-
-        <div className="flex flex-col text-center px-5 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
-          <div className="flex flex-col items-start">
+        <div className="flex flex-col text-center px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto noselect">
+          <div className="flex flex-row justify-between">
             <BackButton text={"back"} destination={"/home"} />
+
+            <WalletConnectButton 
+              walletConnectedState={walletConnectedState}
+              onConnectWallet={handleConnectWallet}
+            />
+            {walletConnectedState && (
+            <ConnectedWallet userAddress={userAddress} />
+            )}
+          </div>
+
+          <div className="flex flex-col items-start">
             <div className="flex flex-col pt-8 pb-4">
-              <h1 className="md:text-left text-3x1 md:text-4xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
+              <h1 className="md:text-left text-3x1 md:text-4xl font-bold dark:text-gray-200 underline underline-offset-12 decoration-4">
                 Blockchain
               </h1>
             </div>
 
-            <div className="flex flex-col items-start space-y-6 pb-4">
+            <div className="flex flex-col space-y-4 pb-4 w-full">
 
               <IntegrationInfo
                 walletConnectedState={walletConnectedState}
               />
 
-              <div className="flex flex-row space-x-5">
+              <div className="flex md:flex-row md:space-y-0 md:space-x-5 flex-col items-center space-y-4">
                 <POAPButtton 
                   walletConnectedState={walletConnectedState}
                   // userAddress={userAddress}
@@ -71,7 +71,7 @@ const Blockchain: React.FunctionComponent = () => {
                   userAddress={userAddress}
                 />
               </div>
-              <div className="flex flex-row space-x-5">
+              <div className="flex md:flex-row md:space-y-0 md:space-x-5 flex-col items-center space-y-4">
                 <EtherscanButton
                   walletConnectedState={walletConnectedState}
                 />

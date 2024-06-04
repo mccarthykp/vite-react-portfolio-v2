@@ -21,13 +21,15 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
 }) => {
   return (
     <div className="
-      group rounded-sm p-6 mb-8 mx-auto
+      group p-6 mb-8 mx-auto
       shadow-lg hover:shadow-2xl
       transition-bg duration-300
+      backdrop-blur-sm
+      hover:backdrop-blur-none
 
       dark:bg-gray-800
-      dark:bg-opacity-30
-      dark:hover:bg-opacity-45
+      dark:bg-opacity-5
+      dark:hover:bg-opacity-50
       dark:text-gray-800
       dark-corner-outline
       hover:dark-corner-outline-hover
@@ -80,7 +82,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
         rel="noopener noreferrer"
         draggable="false"
       >
-        <span className="bg-left-bottom bg-gradient-to-r from-blue-300 to-pink-300 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out h-0.5">
+        <span className="bg-left-bottom bg-gradient-to-r from-blue-300 to-pink-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out h-0.5">
           view project
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="flex size-3 ml-2 mt-1">

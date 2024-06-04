@@ -18,9 +18,9 @@ export default {
     function({ addUtilities }) {
       addUtilities({
         '.dark-corner-outline': {
-          '--b': '2px',
+          '--b': '4px',
           '--c': '#a5b4fc',
-          '--w': '8px',
+          '--w': '4px',
 
           'border': 'var(--b) solid #0000',
           '--_g': '#0000 90deg, var(--c) 0',
@@ -32,7 +32,7 @@ export default {
           // 'transition': 'all ease-in-out 300ms',
         },
         '.dark-corner-outline-hover': {
-          '--b': '2px',
+          '--b': '4px',
           '--c': '#93c5fd',
           '--w': '16px',
         },

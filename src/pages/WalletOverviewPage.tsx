@@ -26,7 +26,7 @@ const WalletOverviewPage = () => {
 
   return (
     <>
-      <section className="flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+      <section className="scroll-smooth flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
         <div className="flex flex-col text-center px-4 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
             <BackButton text={"back"} destination={"/blockchain"} />

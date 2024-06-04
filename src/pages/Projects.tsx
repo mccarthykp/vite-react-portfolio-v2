@@ -9,7 +9,7 @@ import Footer from "../components/Footer";
 export default function Projects() {
   return (
     <>
-      <section className="flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+      <section className="scroll-smooth flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
         <div className="flex flex-col text-center px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto noselect">
           <div className="flex flex-col items-start">
             <BackButton text={"back"} destination={"/home"} />

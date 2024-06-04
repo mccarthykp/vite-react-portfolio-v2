@@ -32,7 +32,7 @@ const Blockchain: React.FunctionComponent = () => {
 
   return (
     <>
-      <section className="bg-blockchain dark:dark-bg-blockchain flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+      <section className="scroll-smooth bg-blockchain dark:dark-bg-blockchain flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
 
         <div className="flex flex-col text-center px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto noselect">
           <div className="flex flex-row justify-between">

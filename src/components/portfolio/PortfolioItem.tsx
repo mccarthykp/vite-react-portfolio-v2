@@ -20,7 +20,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
   description,
 }) => {
   return (
-    <div className="backdrop-blur-sm p-6 mb-8 rounded-lg shadow-lg hover:shadow-2xl bg-neutral-800 dark:bg-slate-800 dark:bg-opacity-20 hover:dark:bg-opacity-35 text-gray-300 dark:text-gray-800 mx-auto transition-bg duration-300">
+    <div className="backdrop-blur-sm p-6 mb-8 rounded-lg shadow-lg hover:shadow-2xl bg-neutral-800 dark:bg-slate-800 dark:bg-opacity-25 hover:dark:bg-opacity-35 text-gray-300 dark:text-gray-800 mx-auto transition-bg duration-300">
       {/* <a
         href={link}
         target="_blank"

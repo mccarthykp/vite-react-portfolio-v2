@@ -42,11 +42,11 @@ const EtherscanButton: React.FunctionComponent<EtherscanButtonProps> = ({
         onClick={handleEtherscanButtonClick}
         // Disable button if no wallet is connected
         disabled={!walletConnectedState} 
-        className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-medium md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
+        className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
           walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
-        Etherscan
+        etherscan
       </button>
     </>
   );

@@ -46,11 +46,11 @@ const POAPButton: React.FunctionComponent<POAPButtonProps> = ({
         className={`
         ${!walletConnectedState ? 'blur-sm hover:ring-0 hover:ring-transparent' : ''}
         ${poapClaimed
-          ? "bg-gray-600 cursor-default text-white font-medium py-3 px-6 md:w-40 w-full rounded-lg focus:transparent transition-bg duration-300 opacity-50"
-          : "bg-gradient-to-r from-pink-500 to-yellow-500 ring-inset hover:ring-2 ring-white text-white font-medium py-3 md:w-40 w-full rounded-lg focus:transparent"
+          ? "bg-gray-600 cursor-default text-white font-orbitron font-medium tracking-widest py-3 px-6 md:w-40 w-full rounded-lg focus:transparent transition-bg duration-300 opacity-50"
+          : "bg-gradient-to-r from-pink-500 to-yellow-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md py-3 md:w-40 w-full rounded-lg focus:transparent"
         } `}
       >
-        {poapClaimed ? "Claimed" : "Claim POAP"}
+        {poapClaimed ? "claimed" : "claim POAP"}
       </button>
     </>
   );

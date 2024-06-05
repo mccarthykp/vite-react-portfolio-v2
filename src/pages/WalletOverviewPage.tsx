@@ -26,17 +26,17 @@ const WalletOverviewPage = () => {
 
   return (
     <>
-      <section className="scroll-smooth flex flex-col font-sans bg-gray-200 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
-        <div className="flex flex-col text-center px-4 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
+      <section className="scroll-smooth flex flex-col font-sans bg-gray-200 dark:bg-zinc-950 min-h-screen py-10 select-none">
+        <div className="flex flex-col px-4 w-3/3 md:w-4/5 lg:w-1/2 mx-auto noselect">
           <div className="flex flex-col items-start">
             <BackButton text={"back"} destination={"/blockchain"} />
             <div className="flex flex-col py-8">
-              <h1 className="text-3x1 md:text-4xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4">
+              <h1 className="md:text-4xl text-3xl font-orbitron font-extrabold tracking-wide dark:text-gray-200 underline underline-offset-12 decoration-2">
                 Wallet Overview
               </h1>
             </div>
           </div>
-          <p className="flex dark:text-gray-300">Wallet Address: {address}</p>
+          <p className="flex dark:text-red-400 font-rajdhani font-normal tracking-wide">Wallet Address: {address}</p>
           {/* display wallet information here */}
           <div className="w-1/1 flex-col py-4 text-center">
             <div className="flex flex-col md:flex-row">
@@ -46,7 +46,9 @@ const WalletOverviewPage = () => {
                 <LinkedInButton />
               </div>
             </div>
-            <Footer />
+            <div className="mt-4">
+              <Footer />
+            </div>
           </div>
         </div>
       </section>

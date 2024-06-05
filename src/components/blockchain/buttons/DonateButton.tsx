@@ -76,11 +76,11 @@ const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
         type="button"
         onClick={handleDonate }
         disabled={!walletConnectedState}
-        className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-medium md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
+        className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
           walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
-        Buy me a coffee!
+        buy me a coffee!
       </button>
     </>
   );

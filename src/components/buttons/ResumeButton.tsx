@@ -1,10 +1,6 @@
 import React from "react";
 
-interface ResumeButtonProps {
-  text: string;
-}
-
-const ResumeButton: React.FunctionComponent<ResumeButtonProps> = ({ text }) => {
+const ResumeButton: React.FunctionComponent = () => {
   const openResume = () => {
     const resumeUrl = 'src/assets/docs/KevinMcCarthy_Resume.pdf';
     window.open(resumeUrl, '_blank');
@@ -13,11 +9,11 @@ const ResumeButton: React.FunctionComponent<ResumeButtonProps> = ({ text }) => {
   return (
     <>
       <button
-        className="bg-teal-600 hover:bg-teal-500 text-white font-medium mt-4 py-3 px-4 md:px-4 rounded-lg shadow-lg focus:transparent transition duration-300"
+        className="bg-teal-700 hover:bg-teal-600 text-white font-orbitron font-medium py-3 px-4 rounded-lg shadow-lg focus:transparent transition duration-300 tracking-widest"
         type="button"
         onClick={openResume}
       >
-        {text}
+        resume
       </button>
     </>
   );

@@ -15,7 +15,7 @@ const BackButton: React.FunctionComponent<BackButtonProps> = ({ text, destinatio
   return (
     <>
       <button
-        className="group flex bg-neutral-950 text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:transparent transition duration-300"
+        className="group flex text-white font-orbitron font-medium tracking-widest py-3 px-0 rounded-lg shadow-lg focus:transparent transition duration-300"
         type="button"
         onClick={handleClick}
       >

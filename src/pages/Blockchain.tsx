@@ -32,9 +32,9 @@ const Blockchain: React.FunctionComponent = () => {
 
   return (
     <>
-      <section className="scroll-smooth bg-blockchain dark:dark-bg-blockchain flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 md:py-20 select-none">
+      <section className="scroll-smooth bg-blockchain dark:dark-bg-blockchain flex flex-col font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 select-none">
 
-        <div className="flex flex-col text-center px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto noselect">
+        <div className="flex flex-col px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto noselect">
           <div className="flex flex-row justify-between">
             <BackButton text={"back"} destination={"/home"} />
 
@@ -49,7 +49,7 @@ const Blockchain: React.FunctionComponent = () => {
 
           <div className="flex flex-col items-start">
             <div className="flex flex-col pt-8 pb-4">
-              <h1 className="md:text-left text-3x1 md:text-4xl font-bold dark:text-gray-200 underline underline-offset-12 decoration-4">
+              <h1 className="md:text-4xl text-3xl font-orbitron font-extrabold tracking-wide dark:text-gray-200 underline underline-offset-12 decoration-2">
                 Blockchain
               </h1>
             </div>
@@ -82,10 +82,10 @@ const Blockchain: React.FunctionComponent = () => {
               </div>
             </div>
 
-            <h2 className="md:text-left text-3x1 md:text-1xl font-bold dark:text-gray-300 underline underline-offset-12 decoration-4 mt-6">
+            <h2 className="md:text-left md:text-3xl text-2xl font-orbitron font-extrabold tracking-wide dark:text-gray-300 underline underline-offset-12 decoration-1 mt-6">
               Projects
             </h2>
-            <div className="mt-6">
+            <div className="mt-10">
               <BlockchainPortfolio />
             </div>
             
@@ -95,7 +95,7 @@ const Blockchain: React.FunctionComponent = () => {
             <BlogContent />
           </div>
           
-          <div className="w-1/1 flex-col py-4 text-center">
+          <div className="w-1/1 flex-col text-center">
             <div className="flex flex-col md:flex-row">
               <div className="flex-col space-x-3 mx-auto md:m-0 md:flex-row">
                 <EmailButton />
@@ -103,7 +103,9 @@ const Blockchain: React.FunctionComponent = () => {
                 <LinkedInButton />
               </div>
             </div>
-            <Footer />
+            <div className="mt-4">
+              <Footer />
+            </div>
           </div>
         </div>
       </section>

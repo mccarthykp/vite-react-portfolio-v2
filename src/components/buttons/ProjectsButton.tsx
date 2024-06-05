@@ -1,13 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-interface ProjectsButtonProps {
-  text: string;
-}
-
-const ProjectsButton: React.FunctionComponent<ProjectsButtonProps> = ({
-  text,
-}) => {
+const ProjectsButton: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/projects");
@@ -16,11 +10,11 @@ const ProjectsButton: React.FunctionComponent<ProjectsButtonProps> = ({
   return (
     <>
       <button
-        className="relative bg-teal-600 hover:bg-teal-500 text-white font-medium py-3 px-4 md:py-2 md:px-4 rounded-lg shadow-lg focus:transparent transition duration-300"
+        className="bg-teal-700 hover:bg-teal-600 text-white font-orbitron font-medium py-3 px-4 rounded-lg shadow-lg focus:transparent transition duration-300 tracking-widest"
         type="button"
         onClick={handleClick}
       >
-        {text}
+        projects
       </button>
     </>
   );

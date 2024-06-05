@@ -11,20 +11,22 @@ import LinkedInButton from "../components/buttons/LinkedInButton";
 export default function Home() {
   return (
     <>
-      <section className="scroll-smooth lg:w-auto px-5 py-20 md:py-40 font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen flex flex-col select-none background-color: #04242c;">
-        <div className="w-1/1 lg:w-3/4 mx-auto">
+      <section className="scroll-smooth py-10 md:py-40 font-sans bg-neutral-300 dark:bg-zinc-950 min-h-screen flex flex-col select-none">
+        <div className="px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto">
           <Intro />
-          <div className="lg:min-w-min flex flex-col space-y-4 md:space-x-4 md:flex-row">
-            <ResumeButton text={"Resume"} />
-            <ProjectsButton text={"Projects"} />
-            <BlockchainButton text={"Blockchain"} />
-            <div className="flex-col space-x-4 space-y-4 md:space-y-0 mx-auto md:m-0 md:flex-row">
+          <div className="flex flex-col md:flex-row md:mt-4 mt-0">
+            <div className="lg:min-w-min md:space-x-4 md:mt-0 mt-2 flex md:flex-row flex-col md:space-y-0 space-y-4">
+              <ResumeButton />
+              <ProjectsButton />
+              <BlockchainButton />
+            </div>
+            <div className="space-x-4 md:ml-4 mx-auto md:mt-0 mt-8">
               <EmailButton />
               <GitHubButton />
               <LinkedInButton />
             </div>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 md:mt-8">
             <Footer />
           </div>
         </div>

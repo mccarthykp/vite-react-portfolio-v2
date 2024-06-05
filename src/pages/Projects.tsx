@@ -14,7 +14,7 @@ export default function Projects() {
           <div className="flex flex-col items-start">
             <BackButton text={"back"} destination={"/home"} />
             <div className="flex flex-col py-8">
-              <h1 className="text-3x1 md:text-4xl font-orbitron font-extrabold tracking-wide dark:text-gray-200 underline underline-offset-12 decoration-1">
+              <h1 className="md:text-4xl text-3xl font-orbitron font-extrabold tracking-wide dark:text-gray-200 underline underline-offset-12 decoration-1">
                 Projects
               </h1>
             </div>

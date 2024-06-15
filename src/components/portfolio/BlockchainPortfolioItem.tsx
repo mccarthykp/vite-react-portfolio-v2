@@ -27,7 +27,6 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
       mb-8 mx-auto
       transition-bg duration-300
       backdrop-blur-sm
-      
 
       dark:bg-zinc-800
       dark:bg-opacity-20

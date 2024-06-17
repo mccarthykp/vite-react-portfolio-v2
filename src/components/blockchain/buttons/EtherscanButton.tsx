@@ -2,7 +2,7 @@ import React from "react";
 
 declare global {
   interface Window {
-    ethereum?: EthereumProvider;
+    ethereum?: EthereumProvider | undefined;
   }
 }
 
@@ -11,11 +11,11 @@ interface EthereumProvider {
 }
 
 interface EtherscanButtonProps {
-  walletConnectedState: boolean;
+  isConnected: boolean;
 }
 
 const EtherscanButton: React.FunctionComponent<EtherscanButtonProps> = ({
-  walletConnectedState,
+  isConnected,
 }) => {
   const handleEtherscanButtonClick = async () => {
     try {
@@ -41,9 +41,9 @@ const EtherscanButton: React.FunctionComponent<EtherscanButtonProps> = ({
         type="button"
         onClick={handleEtherscanButtonClick}
         // Disable button if no wallet is connected
-        disabled={!walletConnectedState} 
+        disabled={!isConnected} 
         className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
-          walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
+          isConnected ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
         etherscan

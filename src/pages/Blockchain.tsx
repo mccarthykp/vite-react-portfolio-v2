@@ -1,4 +1,3 @@
-import { useState } from "react";
 // Components
 import BackButton from "../components/buttons/BackButton";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";
@@ -14,21 +13,10 @@ import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
 import Footer from "../components/Footer";
-// Utilities
-import { connectWallet } from "../utils/walletConnectUtils";
+import { useWalletConnection } from "../utils/walletConnectUtils";
 
 const Blockchain: React.FunctionComponent = () => {
-  const [walletConnectedState, setWalletConnectedState] = useState<boolean>(false);
-  const [userAddress, setUserAddress] = useState<string | null>(null);
-
-  const handleConnectWallet = async () => {
-    try {
-      await connectWallet(setWalletConnectedState, setUserAddress);
-    } catch (error) {
-      console.error(error);
-      alert("Failed to connect to MetaMask. Please try again.");
-    }
-  };
+  const { userAddress, isConnected, connectAndSign } = useWalletConnection();
 
   return (
     <>
@@ -38,12 +26,14 @@ const Blockchain: React.FunctionComponent = () => {
           <div className="flex flex-row justify-between">
             <BackButton text={"back"} destination={"/home"} />
 
-            <WalletConnectButton 
-              walletConnectedState={walletConnectedState}
-              onConnectWallet={handleConnectWallet}
-            />
-            {walletConnectedState && (
-            <ConnectedWallet userAddress={userAddress} />
+            {!isConnected && (
+              <WalletConnectButton 
+              onConnectWallet={() => connectAndSign(window.ethereum)}
+              />
+            )}
+
+            {isConnected && (
+              <ConnectedWallet userAddress={userAddress} />
             )}
           </div>
 
@@ -57,27 +47,27 @@ const Blockchain: React.FunctionComponent = () => {
             <div className="flex flex-col space-y-4 pb-4 w-full">
 
               <IntegrationInfo
-                walletConnectedState={walletConnectedState}
+                isConnected={isConnected}
               />
 
               <div className="flex md:flex-row md:space-y-0 md:space-x-5 flex-col items-center space-y-4">
                 <POAPButtton 
-                  walletConnectedState={walletConnectedState}
+                  isConnected={isConnected}
                   // userAddress={userAddress}
                 />
                 
                 <DonateButton 
-                  walletConnectedState={walletConnectedState}
+                  isConnected={isConnected}
                   userAddress={userAddress}
                 />
               </div>
               <div className="flex md:flex-row md:space-y-0 md:space-x-5 flex-col items-center space-y-4">
                 <EtherscanButton
-                  walletConnectedState={walletConnectedState}
+                  isConnected={isConnected}
                 />
 
                 <WalletOverviewButton
-                  walletConnectedState={walletConnectedState}
+                  isConnected={isConnected}
                 />
               </div>
             </div>
@@ -95,13 +85,11 @@ const Blockchain: React.FunctionComponent = () => {
             <BlogContent />
           </div>
           
-          <div className="w-1/1 flex-col text-center">
-            <div className="flex flex-col md:flex-row">
-              <div className="flex-col space-x-3 mx-auto md:m-0 md:flex-row">
-                <EmailButton />
-                <GitHubButton />
-                <LinkedInButton />
-              </div>
+          <div className="flex flex-col w-1/1 text-center">
+            <div className="flex space-x-3 mx-auto md:m-0 md:flex-row">
+              <EmailButton />
+              <GitHubButton />
+              <LinkedInButton />
             </div>
             <div className="mt-4">
               <Footer />

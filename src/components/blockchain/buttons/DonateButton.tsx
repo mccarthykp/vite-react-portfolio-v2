@@ -2,7 +2,7 @@ import axios from "axios";
 
 declare global {
   interface Window {
-    ethereum?: EthereumProvider;
+    ethereum?: EthereumProvider | undefined;
   }
 }
 
@@ -11,16 +11,16 @@ interface EthereumProvider {
 }
 
 interface DonateButtonProps {
-  walletConnectedState: boolean;
+  isConnected: boolean;
   userAddress: string | null;
 }
 
 const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
-  walletConnectedState,
+  isConnected,
   userAddress,
 }) => {
   const handleDonate = async () => {
-    if (!walletConnectedState) {
+    if (!isConnected) {
       alert("Please connect your wallet first.");
       return;
     }
@@ -75,9 +75,9 @@ const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
       <button
         type="button"
         onClick={handleDonate }
-        disabled={!walletConnectedState}
+        disabled={!isConnected}
         className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
-          walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
+          isConnected ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
         buy me a coffee!

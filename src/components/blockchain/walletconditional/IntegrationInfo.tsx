@@ -1,15 +1,15 @@
 import React from "react";
 
 interface IntegrationInfoProps {
-  walletConnectedState: boolean;
+  isConnected: boolean;
 }
 
 const IntegrationInfo: React.FunctionComponent<IntegrationInfoProps> = ({
-  walletConnectedState,
+  isConnected,
 }) => {
   return (
     <>
-      {walletConnectedState ? (
+      {isConnected ? (
         <p className="flex mt-3 bg-neutral-300 dark:bg-opacity-0 bg-opacity-40 rounded-lg pr-2 dark:text-gray-300 items-center font-rajdhani font-normal tracking-wide md:text-md text-sm">
           <span className="text-blue-900 dark:text-blue-200 mr-2 text-2xl">&#9432;</span>
           I'm working on new integrations, check back soon to see more!

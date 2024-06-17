@@ -20,7 +20,7 @@ export default function Home() {
               <ProjectsButton />
               <BlockchainButton />
             </div>
-            <div className="space-x-4 md:ml-4 mx-auto md:mt-0 mt-8">
+            <div className="flex space-x-4 md:ml-4 mx-auto md:mt-0 mt-8">
               <EmailButton />
               <GitHubButton />
               <LinkedInButton />

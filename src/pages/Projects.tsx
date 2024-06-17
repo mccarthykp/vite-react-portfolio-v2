@@ -22,13 +22,11 @@ export default function Projects() {
           <div className="mt-2">
             <Portfolio />
           </div>
-          <div className="w-1/1 flex-col text-center">
-            <div className="flex flex-col md:flex-row">
-              <div className="flex-col space-x-3 mx-auto md:m-0 md:flex-row">
-                <EmailButton />
-                <GitHubButton />
-                <LinkedInButton />
-              </div>
+          <div className="flex flex-col w-1/1 text-center">
+            <div className="flex space-x-3 mx-auto md:m-0 md:flex-row">
+              <EmailButton />
+              <GitHubButton />
+              <LinkedInButton />
             </div>
             <div className="mt-4">
               <Footer />

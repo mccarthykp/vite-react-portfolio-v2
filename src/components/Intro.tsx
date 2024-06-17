@@ -2,7 +2,7 @@ export default function Intro() {
   return (
     <>
       <div className="flex flex-row">
-        <h1 className="text-4xl font-bold text-left text-black dark:text-gray-300 pt-10">
+        <h1 className="text-4xl font-orbitron font-extrabold text-left text-black dark:text-neutral-300 pt-10 tracking-wide">
           Hi, I'm Kevin!
         </h1>
         <div className="w-1/3 lg:w-3/3">
@@ -17,7 +17,7 @@ export default function Intro() {
         </div>
       </div>
 
-      <p className="lg:w-5/6 max-w-4xl text-xl font-normal text-left text-gray-600 dark:text-gray-400 py-4">
+      <p className="lg:w-5/6 max-w-4xl md:text-2xl text-xl font-rajdhani font-normal text-left text-gray-600 dark:text-neutral-400 py-4 tracking-wide">
         I'm a <b>Full Stack Software Developer</b> with over four years of
         industry experience. My most recent work involved leveraging
         internal APIs to develop new user experiences and increase user

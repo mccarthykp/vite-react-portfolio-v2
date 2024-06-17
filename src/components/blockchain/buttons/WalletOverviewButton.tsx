@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 declare global {
   interface Window {
-    ethereum?: EthereumProvider;
+    ethereum?: EthereumProvider | undefined;
   }
 }
 
@@ -12,11 +12,11 @@ interface EthereumProvider {
 }
 
 interface WalletOverviewButtonProps {
-  walletConnectedState: boolean;
+  isConnected: boolean;
 }
 
 const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> = ({
-  walletConnectedState,
+  isConnected,
 }) => {
   const navigate = useNavigate();
 
@@ -27,8 +27,8 @@ const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> =
         const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
         const currentAccount = accounts[0];
 
-        // Open new tab with wallet information
-        navigate(`/wallet-overview/address=${currentAccount}`);
+        // Open new tab with wallet address
+        navigate('/wallet-overview', { state: { address: currentAccount } });
       } else {
         // MetaMask is not installed
         alert("MetaMask is not installed");
@@ -44,12 +44,12 @@ const WalletOverviewButton: React.FunctionComponent<WalletOverviewButtonProps> =
         type="button"
         onClick={handleWalletOverviewButtonClick}
         // Disable button if no wallet is connected
-        disabled={!walletConnectedState} 
-        className={`bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium w-45 py-3 w-40 rounded-lg shadow-lg focus:transparent ${
-          walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
+        disabled={!isConnected} 
+        className={`bg-gradient-to-r from-pink-500 to-yellow-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
+          isConnected ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
-        Wallet Overview
+        wallet overview
       </button>
     </>
   );

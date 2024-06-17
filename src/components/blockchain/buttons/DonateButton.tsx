@@ -2,7 +2,7 @@ import axios from "axios";
 
 declare global {
   interface Window {
-    ethereum?: EthereumProvider;
+    ethereum?: EthereumProvider | undefined;
   }
 }
 
@@ -10,17 +10,17 @@ interface EthereumProvider {
   request: (args: { method: string; params?: unknown[] }) => Promise<string>;
 }
 
-interface WalletConnectButtonProps {
-  walletConnectedState: boolean;
-  userAddress: string;
+interface DonateButtonProps {
+  isConnected: boolean;
+  userAddress: string | null;
 }
 
-const DonateButton: React.FunctionComponent<WalletConnectButtonProps> = ({
-  walletConnectedState,
+const DonateButton: React.FunctionComponent<DonateButtonProps> = ({
+  isConnected,
   userAddress,
 }) => {
   const handleDonate = async () => {
-    if (!walletConnectedState) {
+    if (!isConnected) {
       alert("Please connect your wallet first.");
       return;
     }
@@ -74,13 +74,13 @@ const DonateButton: React.FunctionComponent<WalletConnectButtonProps> = ({
     <>
       <button
         type="button"
-        onClick={handleDonate}
-        disabled={!walletConnectedState}
-        className={`bg-gradient-to-r from-green-400 to-blue-500 ring-inset hover:ring-2 ring-white text-white font-medium w-45 py-3 w-40 rounded-lg shadow-lg focus:transparent ${
-          walletConnectedState ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
+        onClick={handleDonate }
+        disabled={!isConnected}
+        className={`bg-gradient-to-r from-orange-500 to-pink-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md md:w-40 w-full py-3 rounded-lg shadow-lg focus:transparent ${
+          isConnected ? "" : "blur-sm hover:ring-0 hover:ring-transparent"
         }`}
       >
-        Buy me a coffee!
+        buy me a coffee!
       </button>
     </>
   );

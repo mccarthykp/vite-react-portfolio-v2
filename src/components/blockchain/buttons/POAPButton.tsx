@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 declare global {
   interface Window {
-    ethereum?: EthereumProvider;
+    ethereum?: EthereumProvider | undefined;
   }
 }
 
@@ -12,18 +12,16 @@ interface EthereumProvider {
 }
 
 interface POAPButtonProps {
-  walletConnectedState: boolean;
-  userAddress: string;
+  isConnected: boolean;
 }
 
 const POAPButton: React.FunctionComponent<POAPButtonProps> = ({
-  walletConnectedState,
-  // userAddress,
+  isConnected,
 }) => {
   const [poapClaimed, setPOAPClaimed] = useState(false);
 
   const handleDistribute = async () => {
-    if (!walletConnectedState) {
+    if (!isConnected) {
       alert("Please connect your wallet first.");
       return;
     }
@@ -44,15 +42,15 @@ const POAPButton: React.FunctionComponent<POAPButtonProps> = ({
         type="button"
         onClick={handleDistribute}
         // Disable button if POAP is claimed or no wallet is connected
-        disabled={poapClaimed || !walletConnectedState} 
+        disabled={poapClaimed || !isConnected} 
         className={`
-        ${!walletConnectedState ? 'blur-sm hover:ring-0 hover:ring-transparent' : ''}
+        ${!isConnected ? 'blur-sm hover:ring-0 hover:ring-transparent' : ''}
         ${poapClaimed
-          ? "bg-gray-600 cursor-default text-white font-medium py-3 px-6 w-40 rounded-lg focus:transparent transition-bg duration-300 opacity-50"
-          : "bg-gradient-to-r from-blue-500 to-green-400 ring-inset hover:ring-2 ring-white text-white font-medium py-3 w-40 rounded-lg focus:transparent"
+          ? "bg-gray-600 cursor-default text-white font-orbitron font-medium tracking-widest py-3 px-6 md:w-40 w-full rounded-lg focus:transparent transition-bg duration-300 opacity-50"
+          : "bg-gradient-to-r from-pink-500 to-yellow-500 ring-inset hover:ring-2 ring-white text-white font-orbitron font-medium tracking-wide md:text-sm text-md py-3 md:w-40 w-full rounded-lg focus:transparent"
         } `}
       >
-        {poapClaimed ? "Claimed" : "Claim POAP"}
+        {poapClaimed ? "claimed" : "claim POAP"}
       </button>
     </>
   );

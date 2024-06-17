@@ -16,7 +16,15 @@ import Footer from "../components/Footer";
 import { useWalletConnection } from "../utils/walletConnectUtils";
 
 const Blockchain: React.FunctionComponent = () => {
-  const { userAddress, isConnected, connectAndSign } = useWalletConnection();
+  const { connectAndSign, disconnect, isConnected, isLoading, userAddress } = useWalletConnection();
+
+  if (isLoading) {
+    return (
+      <div className="bg-blockchain dark:dark-bg-blockchain flex justify-center items-center font-sans bg-neutral-300 dark:bg-gray-900 min-h-screen py-10 select-none">
+        <div className="loader">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -33,7 +41,7 @@ const Blockchain: React.FunctionComponent = () => {
             )}
 
             {isConnected && (
-              <ConnectedWallet userAddress={userAddress} />
+              <ConnectedWallet userAddress={userAddress} onDisconnect={disconnect} />
             )}
           </div>
 

@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const SESSION_KEY = 'walletConnection';
 
 interface EthereumProvider {
   request: (args: { method: string; params?: unknown[] }) => Promise<string>;
@@ -7,6 +9,7 @@ interface EthereumProvider {
 export const useWalletConnection = () => {
   const [userAddress, setUserAddress] = useState<string | null>(null);
   const [isConnected, setIsConnected] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Function to handle wallet connection and signing
   const connectAndSign = async (provider: EthereumProvider | undefined) => {
@@ -64,11 +67,32 @@ export const useWalletConnection = () => {
 
       // Set isConnected to true upon successful signing
       setIsConnected(true);
+
+      // Store connection details in session storage
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify({ isConnected: true, userAddress: account }));
     } catch (error) {
       console.error("Failed to sign message:", error);
       alert("Failed to sign message.");
     }
   };
 
-  return { userAddress, isConnected, connectAndSign };
+  // Function to disconnect wallet
+  const disconnect = () => {
+    setUserAddress(null);
+    setIsConnected(false);
+    sessionStorage.removeItem(SESSION_KEY);
+  };
+
+  // Load wallet connection state from session storage on component mount
+  useEffect(() => {
+    const storedData = sessionStorage.getItem(SESSION_KEY);
+    if (storedData) {
+      const { isConnected, userAddress } = JSON.parse(storedData);
+      setIsConnected(isConnected);
+      setUserAddress(userAddress);
+    }
+    setIsLoading(false); // Set loading to false after data is loaded
+  }, []);
+
+  return { userAddress, isConnected, connectAndSign, disconnect, isLoading };
 };

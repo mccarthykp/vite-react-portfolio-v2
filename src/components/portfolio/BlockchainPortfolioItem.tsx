@@ -30,7 +30,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
 
       dark:bg-zinc-800
       dark:bg-opacity-20
-      dark:hover:bg-opacity-0
+      dark:hover:bg-opacity-5
       
       dark:text-gray-800
       dark-corner-outline

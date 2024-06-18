@@ -1,6 +1,8 @@
+import React from "react";
 // Components
 import BackButton from "../components/buttons/BackButton";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";
+import { useWalletConnection } from "../utils/walletConnectUtils";
 import ConnectedWallet from "../components/blockchain/buttons/ConnectedWallet";
 import IntegrationInfo from "../components/blockchain/walletconditional/IntegrationInfo";
 import BlockchainPortfolio from "../components/portfolio/BlockchainPortfolio";
@@ -13,7 +15,6 @@ import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
 import Footer from "../components/Footer";
-import { useWalletConnection } from "../utils/walletConnectUtils";
 
 const Blockchain: React.FunctionComponent = () => {
   const { connectAndSign, disconnect, isConnected, isLoading, userAddress } = useWalletConnection();

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom"; // Import HashRouter
 // Dark Mode Script
 import { applyTheme } from "./utils/themeUtils";
 // Visibility Script
@@ -26,16 +26,16 @@ export default function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter> {/* Use HashRouter instead of BrowserRouter */}
         <Routes>
-          <Route index element={<Home />} />
+          <Route path="/" element={<Home />} /> {/* Use path="/" for index */}
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blockchain" element={<Blockchain />} />
           {/* <Route path="/wallet-overview" element={<WalletOverviewPage />} /> */}
           <Route path="*" element={<NoPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }

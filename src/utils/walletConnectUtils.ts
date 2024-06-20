@@ -16,11 +16,12 @@ export const useWalletConnection = () => {
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const connectAndSign = async (provider: EthereumProvider | undefined) => {
+  const connectAndSign = async (provider: EthereumProvider | undefined, redirectUrl: string = '/blockchain') => {
     try {
       if (!provider) {
         if (isMobile()) {
-          window.location.href = 'https://metamask.app.link/dapp/www.kevinmccarthy.dev';
+          // Redirect to MetaMask app
+          window.location.href = `https://metamask.app.link/dapp/www.kevinmccarthy.dev?redirect=${encodeURIComponent(redirectUrl)}`;
           return;
         } else {
           alert("Please install MetaMask extension to connect your wallet.");
@@ -68,8 +69,18 @@ export const useWalletConnection = () => {
       setIsConnected(true);
       sessionStorage.setItem(SESSION_KEY, JSON.stringify({ isConnected: true, userAddress: account }));
 
-      // Redirect back to your website after signing
-      window.location.href = 'kevinmccarthy.dev';
+      // After signing, redirect back to the specified URL
+      const storedData = sessionStorage.getItem(SESSION_KEY);
+      if (storedData) {
+        const { redirect } = JSON.parse(storedData);
+        if (redirect) {
+          window.location.href = redirect; // Redirect to the specified URL
+        } else {
+          window.location.href = '/dashboard'; // Default redirect if no specific URL is stored
+        }
+      } else {
+        window.location.href = '/dashboard'; // Default redirect if no session data is found
+      }
     } catch (error) {
       console.error("Failed to sign message:", error);
       alert("Failed to sign message.");

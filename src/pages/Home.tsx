@@ -1,3 +1,4 @@
+import React from "react";
 // Components
 import Intro from "../components/Intro";
 import Footer from "../components/Footer";
@@ -7,6 +8,7 @@ import BlockchainButton from "../components/blockchain/buttons/BlockchainButton"
 import EmailButton from "../components/buttons/EmailButton";
 import GitHubButton from "../components/buttons/GitHubButton";
 import LinkedInButton from "../components/buttons/LinkedInButton";
+
 
 export default function Home() {
   return (

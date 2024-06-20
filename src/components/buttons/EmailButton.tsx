@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ButtonTooltip from "../ButtonTooltip";
+import React from "react";
 
 const EmailButton = () => {
   const [tooltipMessage, setTooltipMessage] = useState("Copy Email");

@@ -25,7 +25,9 @@ const ConnectedWallet: React.FunctionComponent<ConnectedWalletProps> = ({ userAd
           </svg>
         </span>
       </ButtonTooltip>
-      <span className="text-teal-900 font-rajdhani font-medium tracking-wide dark:text-teal-300">Connected</span>: {truncateAddress(userAddress, 8)}
+      <span className="text-teal-900 font-rajdhani font-medium tracking-wide dark:text-teal-300">
+        Connected
+      </span>: {truncateAddress(userAddress, 8)}
     </div>
   );
 };

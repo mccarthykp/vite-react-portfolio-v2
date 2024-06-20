@@ -20,7 +20,7 @@ export const useWalletConnection = () => {
     try {
       if (!provider) {
         if (isMobile()) {
-          window.location.href = 'https://metamask.app.link/dapp/https://www.kevinmccarthy.dev';
+          window.location.href = 'https://metamask.app.link/dapp/www.kevinmccarthy.dev';
           return;
         } else {
           alert("Please install MetaMask extension to connect your wallet.");
@@ -69,7 +69,7 @@ export const useWalletConnection = () => {
       sessionStorage.setItem(SESSION_KEY, JSON.stringify({ isConnected: true, userAddress: account }));
 
       // Redirect back to your website after signing
-      window.location.href = 'https://kevinmccarthy.dev';
+      window.location.href = 'kevinmccarthy.dev';
     } catch (error) {
       console.error("Failed to sign message:", error);
       alert("Failed to sign message.");

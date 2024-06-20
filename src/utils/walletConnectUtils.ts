@@ -20,7 +20,7 @@ export const useWalletConnection = () => {
     try {
       if (!provider) {
         if (isMobile()) {
-          window.location.href = 'https://metamask.app.link/dapp/YOUR_DAPP_URL';
+          window.location.href = 'https://metamask.app.link/dapp/https://www.kevinmccarthy.dev/blockchain';
           return;
         } else {
           alert("Please install MetaMask extension to connect your wallet.");

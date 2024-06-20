@@ -69,7 +69,7 @@ export const useWalletConnection = () => {
       sessionStorage.setItem(SESSION_KEY, JSON.stringify({ isConnected: true, userAddress: account }));
 
       // Redirect back to your website after signing
-      window.location.href = 'https://yourwebsite.com/dashboard'; // Replace with your actual website URL
+      window.location.href = 'https://kevinmccarthy.dev/blockchain';
     } catch (error) {
       console.error("Failed to sign message:", error);
       alert("Failed to sign message.");

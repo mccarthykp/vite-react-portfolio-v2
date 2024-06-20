@@ -1,5 +1,3 @@
-import React from "react";
-
 interface PortfolioItemProps {
   title: string;
   subtitle: string;

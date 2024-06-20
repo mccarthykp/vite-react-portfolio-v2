@@ -1,4 +1,3 @@
-import React from "react";
 import blockchainportfolio, { BlockchainPortfolioItemData } from "../../data/blockchainportfolio.ts";
 import BlockchainPortfolioItem from "./BlockchainPortfolioItem.tsx";
 

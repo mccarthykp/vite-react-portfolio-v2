@@ -1,4 +1,3 @@
-import React from "react";
 // Components
 import BackButton from "../components/buttons/BackButton";
 import WalletConnectButton from "../components/blockchain/buttons/WalletConnectButton";

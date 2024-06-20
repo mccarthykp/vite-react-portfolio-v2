@@ -21,7 +21,7 @@ export const useWalletConnection = () => {
       if (!provider) {
         if (isMobile()) {
           // Construct the deep link URL with the correct redirection path
-          const deepLinkUrl = 'https://metamask.app.link/dapp/www.kevinmccarthy.dev';
+          const deepLinkUrl = 'https://metamask.app.link/dapp/www.kevinmccarthy.dev/#/blockchain';
           window.location.href = deepLinkUrl;
           return;
         } else {

@@ -9,7 +9,7 @@ import { onDOMReady } from "./utils/domUtils";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Blockchain from "./pages/Blockchain";
-import WalletOverviewPage from "./pages/WalletOverviewPage";
+// import WalletOverviewPage from "./pages/WalletOverviewPage";
 import NoPage from "./pages/NoPage";
 
 export default function App() {
@@ -33,7 +33,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/blockchain" element={<Blockchain />} />
-          <Route path="/wallet-overview" element={<WalletOverviewPage />} />
+          {/* <Route path="/wallet-overview" element={<WalletOverviewPage />} /> */}
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>

@@ -1,4 +1,3 @@
-import React from "react";
 // Components
 import Portfolio from "../components/portfolio/Portfolio";
 import BackButton from "../components/buttons/BackButton";

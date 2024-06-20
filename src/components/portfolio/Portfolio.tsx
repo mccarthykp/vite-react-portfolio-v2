@@ -1,4 +1,3 @@
-import React from "react";
 import portfolio, { PortfolioItemData } from "../../data/portfolio.ts";
 import PortfolioItem from "./PortfolioItem.tsx";
 

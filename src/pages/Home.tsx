@@ -12,7 +12,7 @@ import LinkedInButton from "../components/buttons/LinkedInButton";
 export default function Home() {
   return (
     <>
-      <section className="scroll-smooth py-10 md:py-40 font-sans bg-neutral-300 dark:bg-zinc-950 min-h-screen flex flex-col select-none">
+      <section className="scroll-smooth py-6 md:py-40 font-sans bg-neutral-300 dark:bg-zinc-950 min-h-screen flex flex-col select-none">
         <div className="px-5 w-3/3 md:max-w-screen-md lg:max-w-screen-lg mx-auto">
           <Intro />
           <div className="flex flex-col md:flex-row md:mt-4 mt-0">

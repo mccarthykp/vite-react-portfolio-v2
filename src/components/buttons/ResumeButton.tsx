@@ -2,8 +2,7 @@ import React from "react";
 
 const ResumeButton: React.FunctionComponent = () => {
   const openResume = () => {
-    const resumeUrl = 'public/assets/docs/KevinMcCarthy_Resume.pdf';
-    window.open(resumeUrl, '_blank');
+    const resumeUrl = '/assets/docs/KevinMcCarthy_Resume.pdf';
   };
 
   return (

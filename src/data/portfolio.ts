@@ -16,7 +16,7 @@ const portfolio: PortfolioItemData[] = [
     imgAlt: 'Blockwell Health Logo',
     imgUrl: '/assets/imgs/blockwell-health-logo.png',
     link: 'https://www.linkedin.com/company/blockwell-health',
-    subtitle: 'Decentralized Healthcare Platform',
+    subtitle: 'Healthcare Platform',
     tags: ['HyperLedger Fabric', 'IPFS'],
     title: 'Blockwell Health',
   },

@@ -23,7 +23,7 @@ export default {
       addUtilities({
         '.corner-outline': {
           '--b': '4px',
-          '--c': '#a5b4fc',
+          '--c': '#475569',
           '--w': '4px',
 
           'border': 'var(--b) solid #0000',
@@ -37,7 +37,7 @@ export default {
         },
         '.corner-outline-hover': {
           '--b': '4px',
-          '--c': '#93c5fd',
+          '--c': '#475569',
           '--w': '16px',
         },
         '.dark-corner-outline': {

@@ -85,10 +85,10 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
           {description}
       </p>
       <a
-        className="flex max-w-fit font-rajdhani font-normal tracking-wide text-md max-h-fit ml-4 mb-4
+        className="flex max-w-fit font-rajdhani font-normal tracking-wide text-md max-h-fit ml-4 mb-4 transition-all ease-in-out duration-300
         
         text-neutral-400
-        hover:text-slate-500
+        hover:text-slate-600
         dark:text-neutral-500
         dark:hover:text-slate-300
         " 
@@ -97,7 +97,13 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
         rel="noopener noreferrer"
         draggable="false"
       >
-        <span className="bg-left-bottom bg-gradient-to-r from-blue-300 to-pink-400 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] h-0.5 transition-all ease-in-out duration-300">
+        <span 
+          className="
+            bg-left-bottom bg-gradient-to-r
+            from-pink-600 to-orange-500
+          dark:from-blue-300 dark:to-pink-400 
+          
+            bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] h-0.5">
         view project
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="flex size-3 ml-2 mt-1">

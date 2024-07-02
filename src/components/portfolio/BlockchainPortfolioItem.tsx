@@ -64,7 +64,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
                 bg-neutral-400 group-hover:bg-gray-400 bg-opacity-45 group-hover:bg-opacity-30
                 dark:bg-slate-700 dark:bg-opacity-45 
                 
-                font-rajdhani font-normal tracking-wide md:text-sm text-xs
+                font-rajdhani font-medium dark:font-normal tracking-wide md:text-sm text-xs
                 py-1 px-1.5 mr-2 mt-1 rounded-lg transition-colors duration-300"
               >
                 {tag}

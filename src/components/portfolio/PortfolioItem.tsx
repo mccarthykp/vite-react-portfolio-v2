@@ -70,7 +70,8 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
                 
                 bg-neutral-600
                 group-hover:bg-gray-300
-                dark:bg-slate-700
+                dark:bg-gray-700
+                dark:group-hover:bg-slate-800
                 dark:bg-opacity-45 
                 
                 font-rajdhani font-medium dark:font-normal tracking-wide md:text-sm text-xs
@@ -85,7 +86,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
       <p 
         className="flex text-left pt-1 pb-4 px-4 transition-colors duration-900 font-rajdhani font-normal tracking-wide text-md
           text-neutral-500 group-hover:text-slate-300
-        dark:text-neutral-300 dark:group-hover:text-slate-200">
+        dark:text-neutral-400 dark:group-hover:text-slate-300">
         {description}
       </p>
       <a

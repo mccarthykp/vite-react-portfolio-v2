@@ -89,7 +89,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
 
         text-neutral-400
         hover:text-slate-600
-        dark:text-neutral-500
+        dark:text-neutral-400
         dark:hover:text-slate-300
         " 
         href={link}

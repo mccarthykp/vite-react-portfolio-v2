@@ -21,6 +21,25 @@ export default {
   plugins: [
     function({ addUtilities }) {
       addUtilities({
+        '.corner-outline': {
+          '--b': '4px',
+          '--c': '#475569',
+          '--w': '4px',
+
+          'border': 'var(--b) solid #0000',
+          '--_g': '#0000 90deg, var(--c) 0',
+          '--_p': 'var(--w) var(--w) border-box no-repeat',
+
+          'background': 
+            'conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p), conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p), conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p), conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p)',
+
+          // 'transition': 'all ease-in-out 300ms',
+        },
+        '.corner-outline-hover': {
+          '--b': '4px',
+          '--c': '#475569',
+          '--w': '16px',
+        },
         '.dark-corner-outline': {
           '--b': '4px',
           '--c': '#a5b4fc',

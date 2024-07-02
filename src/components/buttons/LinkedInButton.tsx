@@ -8,7 +8,7 @@ const LinkedInButton: React.FunctionComponent = () => {
   return (
     <>
       <button
-        className="bg-neutral-900 hover:bg-neutral-800 text-white font-semibold py-4 px-2 rounded-lg shadow-lg focus:transparent transition duration-300"
+        className="bg-neutral-800 hover:bg-neutral-900 text-white font-semibold py-4 px-2 rounded-lg shadow-lg focus:transparent transition duration-300"
         type="button"
         onClick={handleClick}
       >

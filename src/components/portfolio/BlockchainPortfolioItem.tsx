@@ -61,7 +61,7 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
                 text-neutral-500 group-hover:text-slate-800
                 dark:text-neutral-400 dark:group-hover:text-slate-300 
                 
-                bg-neutral-300 group-hover:bg-slate-500 bg-opacity-45 group-hover:bg-opacity-30
+                bg-neutral-400 group-hover:bg-slate-500 bg-opacity-45 group-hover:bg-opacity-30
                 dark:bg-gray-700 dark:group-hover:bg-slate-800 dark:bg-opacity-45 
                 
                 font-rajdhani font-medium dark:font-normal tracking-wide md:text-sm text-xs

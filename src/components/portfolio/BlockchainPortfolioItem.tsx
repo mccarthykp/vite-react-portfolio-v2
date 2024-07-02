@@ -85,8 +85,8 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
           {description}
       </p>
       <a
-        className="flex max-w-fit font-rajdhani font-normal tracking-wide text-md max-h-fit ml-4 mb-4 transition-all ease-in-out duration-300
-        
+        className="flex max-w-fit font-rajdhani font-normal tracking-wide text-md max-h-fit ml-4 mb-4
+
         text-neutral-400
         hover:text-slate-600
         dark:text-neutral-500
@@ -103,10 +103,10 @@ const PortfolioItem: React.FunctionComponent<PortfolioItemProps> = ({
             from-pink-600 to-orange-500
           dark:from-blue-300 dark:to-pink-400 
           
-            bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] h-0.5">
+            bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] h-0.5 transition-all ease-in-out duration-300">
         view project
         </span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="flex size-3 ml-2 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="flex size-3 ml-2 mt-1 transition-colors ease-in-out duration-200">
           <path fillRule="evenodd" d="M8.25 3.75H19.5a.75.75 0 0 1 .75.75v11.25a.75.75 0 0 1-1.5 0V6.31L5.03 20.03a.75.75 0 0 1-1.06-1.06L17.69 5.25H8.25a.75.75 0 0 1 0-1.5Z" clipRule="evenodd" />
         </svg>
       </a>

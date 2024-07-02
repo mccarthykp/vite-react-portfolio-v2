@@ -36,7 +36,7 @@ const portfolio: PortfolioItemData[] = [
     imgAlt: 'NeuCalc Logo',
     imgUrl: '/assets/imgs/neucalc-logo.png',
     link: 'https://mccarthykp.github.io/NeuCalc/',
-    subtitle: 'Simple Neumorphic Calculator',
+    subtitle: 'Neumorphic Calculator',
     tags: ['React', 'TypeScript'],
     title: 'NeuCalc',
   },
